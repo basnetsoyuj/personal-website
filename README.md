@@ -1,12 +1,8 @@
-# Personal Blogging Site
+# Personal Portfolio and Blogging Website 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a91a534f-2aec-4597-8ecb-122e3e0a43dd/deploy-status)](https://app.netlify.com/sites/sjbblogs/deploys)
+[https://basnetsoyuj.com.np/](https://basnetsoyuj.com.np/)
 
-A collection of my thoughts, musings, and experiences.
-
-[https://blog.basnetsoyuj.com.np/](https://blog.basnetsoyuj.com.np/)
-
-Soyuj Jung Basnet's blogging website is powered by Gatsby, React, Node.js and Netlify.
+Soyuj Jung Basnet's personal website is powered by Gatsby, React, Node.js, GitHub and Netlify.
 
 ## License
 
