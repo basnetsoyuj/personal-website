@@ -8,10 +8,10 @@ function filterHTML(str, url) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Soyuj Jung Basnet Blogs',
+    title: 'Soyuj Jung Basnet',
     description:
       'A personal blogging website for Soyuj Jung Basnet to put down his thoughts, musings and experiences.',
-    siteUrl: 'https://blog.basnetsoyuj.com.np', // full path to blog - no ending slash
+    siteUrl: 'https://basnetsoyuj.com.np', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://blog.basnetsoyuj.com.np',
+        siteUrl: 'https://basnetsoyuj.com.np',
       },
     },
     'gatsby-plugin-emotion',
