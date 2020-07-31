@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import * as _ from 'lodash';
-import { lighten } from 'polished';
 import React, { useState } from 'react';
 
 import { css } from '@emotion/core';

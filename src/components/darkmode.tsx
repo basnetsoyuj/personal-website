@@ -1,6 +1,6 @@
 import { colors } from '../styles/colors';
 import { css } from '@emotion/core';
-import { lighten, setLightness } from 'polished';
+import { lighten } from 'polished';
 
 export const darkTheme = css`
   /* layouts/index.tsx */

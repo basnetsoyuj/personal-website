@@ -18,7 +18,6 @@ import {
   SiteNavMain,
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
-import { colors } from '../styles/colors';
 
 const PageTemplate = css`
   .site-main {

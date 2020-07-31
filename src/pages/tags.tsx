@@ -19,7 +19,6 @@ import {
   SiteNavMain,
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
-import { colors } from '../styles/colors';
 
 const _ = require('lodash');
 const PageTemplate = css`
