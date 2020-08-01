@@ -4,6 +4,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
+import { useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
@@ -22,6 +23,10 @@ import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 import { AuthorList } from '../components/AuthorList';
+
+import Comment from '../components/comments'
+
+const commentBox = React.createRef();
 
 export interface Author {
   id: string;
@@ -46,9 +51,9 @@ interface PageTemplateProps {
       };
     };
     markdownRemark: {
-      childHtmlRehype:{
+      childHtmlRehype: {
         tableOfContents: Object[];
-      }
+      };
       html: string;
       htmlAst: any;
       excerpt: string;
@@ -195,13 +200,17 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && post.frontmatter.tags.map((node) => (
-                    <div>
-                      <Link to={`/tags/${_.kebabCase(node)}/`} className="inline-tag">{node}</Link>
-                      {post.frontmatter.tags.lastIndexOf(node)!==post.frontmatter.tags.length-1 && 
-                      <span className="bull">&bull;</span>}
-                    </div>
-                  ))}
+                  {post.frontmatter.tags &&
+                    post.frontmatter.tags.length > 0 &&
+                    post.frontmatter.tags.map(node => (
+                      <div>
+                        <Link to={`/tags/${_.kebabCase(node)}/`} className="inline-tag">
+                          {node}
+                        </Link>
+                        {post.frontmatter.tags.lastIndexOf(node) !==
+                          post.frontmatter.tags.length - 1 && <span className="bull">&bull;</span>}
+                      </div>
+                    ))}
                 </PostFullTags>
                 <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
@@ -229,7 +238,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                     </section>
                   </section>
                   <section>
-                  <ShareSocialLink props={props}/>
+                    <ShareSocialLink props={props} />
                   </section>
                 </PostFullByline>
               </PostFullHeader>
@@ -243,8 +252,13 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                   />
                 </PostFullImage>
               )}
-              <PostContent htmlAst={post.htmlAst} toc={post.childHtmlRehype.tableOfContents?post.childHtmlRehype.tableOfContents:[]}/>
-
+              <PostContent
+                htmlAst={post.htmlAst}
+                toc={
+                  post.childHtmlRehype.tableOfContents ? post.childHtmlRehype.tableOfContents : []
+                }
+              />
+              <Comment commentBox={commentBox}/>
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
             </article>
@@ -320,10 +334,9 @@ const PostFullTags = styled.section`
   font-weight: 600;
   text-transform: uppercase;
 
-  a{
+  a {
     padding: 0 5px;
   }
-
 `;
 
 const PostFullCustomExcerpt = styled.p`
