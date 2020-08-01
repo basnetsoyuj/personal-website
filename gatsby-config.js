@@ -33,6 +33,30 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-rehype`,
+      options: {
+        // Condition for selecting an existing GrapghQL node (optional)
+        // If not set, the transformer operates on file nodes.
+        filter: node => node.internal.type === `MarkdownRemark`,
+        // Only needed when using filter (optional, default: node.html)
+        // Source location of the html to be transformed
+        source: node => node.rawMarkdownBody,
+        // Additional fields of the sourced node can be added here (optional)
+        // These fields are then available on the htmlNode on `htmlNode.context`
+        contextFields: [],
+        // Fragment mode (optional, default: true)
+        fragment: true,
+        // Space mode (optional, default: `html`)
+        space: `html`,
+        // EmitParseErrors mode (optional, default: false)
+        emitParseErrors: false,
+        // Verbose mode (optional, default: false)
+        verbose: true,
+        // Plugins configs (optional but most likely you need one)
+        plugins: [],
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -68,30 +92,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
-    {
-      resolve: `gatsby-transformer-rehype`,
-      options: {
-        // Condition for selecting an existing GrapghQL node (optional)
-        // If not set, the transformer operates on file nodes.
-        filter: node => node.internal.type === `MarkdownRemark`,
-        // Only needed when using filter (optional, default: node.html)
-        // Source location of the html to be transformed
-        source: node => node.html,
-        // Additional fields of the sourced node can be added here (optional)
-        // These fields are then available on the htmlNode on `htmlNode.context`
-        contextFields: [],
-        // Fragment mode (optional, default: true)
-        fragment: true,
-        // Space mode (optional, default: `html`)
-        space: `html`,
-        // EmitParseErrors mode (optional, default: false)
-        emitParseErrors: false,
-        // Verbose mode (optional, default: false)
-        verbose: false,
-        // Plugins configs (optional but most likely you need one)
-        plugins: [],
-      },
-    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {

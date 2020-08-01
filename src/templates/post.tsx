@@ -46,6 +46,9 @@ interface PageTemplateProps {
       };
     };
     markdownRemark: {
+      childHtmlRehype:{
+        tableOfContents: Object[];
+      }
       html: string;
       htmlAst: any;
       excerpt: string;
@@ -240,7 +243,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                   />
                 </PostFullImage>
               )}
-              <PostContent htmlAst={post.htmlAst} />
+              <PostContent htmlAst={post.htmlAst} toc={post.childHtmlRehype.tableOfContents?post.childHtmlRehype.tableOfContents:[]}/>
 
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
@@ -433,6 +436,9 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      childHtmlRehype {
+        tableOfContents
+      }
       html
       htmlAst
       excerpt

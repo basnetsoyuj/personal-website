@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
 
 import { colors } from '../styles/colors';
+import TableOfContents from './TableOfContents';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -18,12 +19,14 @@ const Ast = ({ ast, ...props }: any) => {
 
 export interface PostContentProps {
   htmlAst: any;
+  toc: any;
 }
 
-const PostContent: React.FC<PostContentProps> = ({ htmlAst }) => {
+const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc }) => {
   return (
     <PostFullContent className="post-full-content">
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
+      <TableOfContents toc={toc} url=""></TableOfContents>
       <Ast className="post-content" ast={htmlAst} />
     </PostFullContent>
   );
