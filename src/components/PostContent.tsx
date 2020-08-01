@@ -2,7 +2,7 @@ import { lighten } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
-
+import {css} from '@emotion/core';
 import { colors } from '../styles/colors';
 import TableOfContents from './TableOfContents';
 
@@ -27,12 +27,13 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc }) => {
     <PostFullContent className="post-full-content">
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
       <TableOfContents toc={toc} url=""></TableOfContents>
-      <Ast className="post-content" ast={htmlAst} />
+      <Ast className="post-content" ast={htmlAst} css={AstCss} />
     </PostFullContent>
   );
 };
 
 export const PostFullContent = styled.section`
+  display: block;
   position: relative;
   margin: 0 auto;
   padding: 0 170px 6vw;
@@ -44,6 +45,8 @@ export const PostFullContent = styled.section`
 
   @media (max-width: 1170px) {
     padding: 0 11vw;
+    display: flex;
+    align-items: flex-start;
   }
   @media (max-width: 800px) {
     padding: 0 5vw;
@@ -61,6 +64,26 @@ export const PostFullContent = styled.section`
 
   .no-image {
     padding-top: 0;
+  }
+  .kg-image {
+    margin: 0;
+  }
+
+  .kg-gallery-card,
+  .kg-width-wide,
+  .kg-width-full{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kg-gallery-card > *,
+  .kg-width-wide > *,
+  .kg-width-full > *
+  figure.kg-width-full:not(.fluid-image) img {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: 1;
   }
 
   h1,
@@ -607,4 +630,20 @@ export const PostFullContent = styled.section`
   /* End Syntax Highlighting */
 `;
 
+const AstCss = css`
+  display: block;
+  min-width: 100%;
+
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    display: block;
+    content: " ";
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+  }
+`;
 export default PostContent;

@@ -220,7 +220,6 @@ export const darkTheme = css`
     color: rgba(255, 255, 255, 0.9);
     /* background: var(--darkmode); */
 
-
     .site-header-content {
       /* border-bottom-color: color(var(--darkmode) l(+15%)); */
       border-bottom-color: ${lighten('0.15', colors.darkmode)};
@@ -231,7 +230,7 @@ export const darkTheme = css`
     }
   }
 
-  .author-card{
+  .author-card {
     /* background: color(var(--darkmode) l(+4%)); */
     background: ${lighten('0.04', colors.darkmode)};
     box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
@@ -242,12 +241,23 @@ export const darkTheme = css`
     }
   }
 
-  .author-avatar{
+  .author-avatar {
     /* border-color: color(var(--darkgrey) l(+2%)); */
     border-color: ${lighten('0.02', colors.darkgrey)};
   }
 
-  .author-profile-image{
+  .author-profile-image {
     background: ${colors.darkmode} !important;
+  }
+
+  // toc
+  .post-full-content aside {
+    color: #bbb;
+    background: rgb(21,23,26,0.6);
+    
+  }
+
+  .post-full-content aside a {
+    box-shadow: none;
   }
 `;
