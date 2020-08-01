@@ -280,7 +280,9 @@ const IndexLayout: React.FC<IndexProps> = props => {
                   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 }
                 body {
-                  overflow-x: hidden;
+                  @media (max-width: 1170px) {
+                  overflow-x: hidden !important;
+                }
                   color: ${lighten('-0.3', colors.midgrey)};
                   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
                     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

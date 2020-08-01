@@ -126,7 +126,7 @@ export const darkTheme = css`
 
     code {
       color: #fff;
-      background: #000;
+      // background: #000;
     }
 
     hr {

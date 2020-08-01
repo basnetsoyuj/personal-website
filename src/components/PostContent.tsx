@@ -43,7 +43,7 @@ export const PostFullContent = styled.section`
   line-height: 1.6em;
   background: #fff;
 
-  @media (max-width: 1170px) {
+  @media (min-width: 1170px) {
     padding: 0 11vw;
     display: flex;
     align-items: flex-start;
