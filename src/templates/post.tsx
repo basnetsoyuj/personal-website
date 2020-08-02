@@ -4,7 +4,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
 import { lighten, setLightness } from 'polished';
 import React from 'react';
-import { useRef, useEffect } from 'react';
+
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
@@ -24,7 +24,8 @@ import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 import { AuthorList } from '../components/AuthorList';
 
-import Comment from '../components/comments'
+import Comment from '../components/comments';
+import ThemeContext from '../context/ThemeContext';
 
 const commentBox = React.createRef();
 
@@ -258,7 +259,13 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                   post.childHtmlRehype.tableOfContents ? post.childHtmlRehype.tableOfContents : []
                 }
               />
-              <Comment commentBox={commentBox}/>
+
+              <ThemeContext.Consumer>
+                {theme => (
+                  <Comment commentBox={commentBox} theme={theme.dark}/>
+                )}
+              </ThemeContext.Consumer>
+
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
             </article>

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import React from 'react';
 
-const Comment = ({ commentBox }) => {
+const Comment = ({ commentBox,theme}) => {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     scriptEl.async = true;
@@ -10,11 +10,7 @@ const Comment = ({ commentBox }) => {
     scriptEl.setAttribute('issue-term', 'title');
     scriptEl.setAttribute('label', 'comment :pencil:');
     scriptEl.setAttribute('id', 'utterances');
-    if (localStorage.getItem('dark')) {
-      scriptEl.setAttribute('theme', 'github-dark');
-    } else {
-      scriptEl.setAttribute('theme', 'github-light');
-    }
+    scriptEl.setAttribute('theme', `github-${ theme?'dark':'light'}`);
     scriptEl.setAttribute('crossorigin', 'anonymous');
     if (commentBox && commentBox.current) {
       commentBox.current.appendChild(scriptEl);
@@ -22,6 +18,7 @@ const Comment = ({ commentBox }) => {
       console.log(`Error adding utterances comments on: ${commentBox}`);
     }
   }, []);
+  
 return <div ref={commentBox} className="comments"></div>;
 };
 export default Comment;

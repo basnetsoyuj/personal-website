@@ -253,8 +253,7 @@ export const darkTheme = css`
   // toc
   .post-full-content aside {
     color: #bbb;
-    background: rgb(21,23,26,0.6);
-    
+    background: rgb(21, 23, 26, 0.6);
   }
 
   .post-full-content aside a {
