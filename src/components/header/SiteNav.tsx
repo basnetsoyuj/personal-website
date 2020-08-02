@@ -17,6 +17,8 @@ import DarkModeToggle from '../DarkModeToggle';
 interface SiteNavProps {
   isHome?: boolean;
   isPost?: boolean;
+  isBlog?: boolean;
+
   post?: any;
 }
 

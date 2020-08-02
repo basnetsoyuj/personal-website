@@ -54,21 +54,23 @@ export interface IndexProps {
     };
   };
 }
+const pageTitle = config.title + ' Blogs';
+const pageUrl = config.siteUrl + ' /blog';
 
-const IndexPage: React.FC<IndexProps> = props => {
+const BlogPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.ogImage.childImageSharp.fixed;
 
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
         <html lang={config.lang} />
-        <title>{config.title}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={config.description} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={config.title} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={config.description} />
-        <meta property="og:url" content={config.siteUrl} />
+        <meta property="og:url" content={pageUrl} />
         <meta
           property="og:image"
           content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
@@ -78,9 +80,9 @@ const IndexPage: React.FC<IndexProps> = props => {
           <meta name="google-site-verification" content={config.googleSiteVerification} />
         )}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
+        <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
+        <meta name="twitter:url" content={pageUrl} />
         <meta
           name="twitter:image"
           content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
@@ -103,17 +105,17 @@ const IndexPage: React.FC<IndexProps> = props => {
           }}
         >
           <div css={inner}>
-            <SiteNav isHome />
+            <SiteNav isBlog />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
                     style={{ maxHeight: '55px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
+                    alt={pageTitle}
                   />
                 ) : (
-                  config.title
+                  pageTitle
                 )}
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
@@ -150,7 +152,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/logo.png" }) {
+    logo: file(relativePath: { eq: "img/blog-logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -282,4 +284,4 @@ const HomePosts = css`
   }
 `;
 
-export default IndexPage;
+export default BlogPage;

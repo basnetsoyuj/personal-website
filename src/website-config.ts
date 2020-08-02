@@ -3,6 +3,8 @@ export interface WebsiteConfig {
   description: string;
   coverImage?: string;
   logo: string;
+  blogLogo: string;
+
   /**
    * Specifying a valid BCP 47 language helps screen readers announce text properly.
    * See: https://dequeuniversity.com/rules/axe/2.2/valid-lang
@@ -54,6 +56,7 @@ const config: WebsiteConfig = {
   description: 'A collection of my thoughts, musings, and experiences.',
   coverImage: 'img/blog-cover.jpg',
   logo: 'img/logo.png',
+  blogLogo: 'img/blog-logo.png',
   lang: 'en',
   themeColor: '#26A6ED',
   siteUrl: 'https://basnetsoyuj.com.np',
