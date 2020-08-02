@@ -46,6 +46,7 @@ export interface WebsiteConfig {
    * Appears alongside the footer, after the credits
    */
   footer?: string;
+  themeColor?: string;
   portfolioUrl?: string;
 }
 
@@ -55,6 +56,7 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-cover.jpg',
   logo: 'img/logo.png',
   lang: 'en',
+  themeColor: '#26A6ED',
   siteUrl: 'https://basnetsoyuj.com.np',
   facebook: 'https://github.com/basnetsoyuj',
   twitter: 'https://twitter.com/basnetsoyuj',

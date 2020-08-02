@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const config = require('./src/website-config');
 
 function filterHTML(str, url) {
   let noIframe = str.replace(/<iframe.*?<\/iframe>/g, '');
@@ -30,6 +31,13 @@ module.exports = {
       options: {
         name: 'content',
         path: path.join(__dirname, 'src', 'content'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: config.themeColor,
+        showSpinner: true,
       },
     },
     {
