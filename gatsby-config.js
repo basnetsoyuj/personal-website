@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const config = require('./src/website-config');
 
 function filterHTML(str, url) {
   let noIframe = str.replace(/<iframe.*?<\/iframe>/g, '');
@@ -36,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: config.themeColor,
+        color: '#26A6ED',
         showSpinner: true,
       },
     },
