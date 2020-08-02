@@ -259,4 +259,9 @@ export const darkTheme = css`
   .post-full-content aside a {
     box-shadow: none;
   }
+
+  .h_rule {
+    /* border-top-color: color(var(--darkmode) l(+8%)); */
+    border-top-color: ${lighten('0.08', colors.darkmode)};
+  }
 `;

@@ -259,7 +259,6 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                   post.childHtmlRehype.tableOfContents ? post.childHtmlRehype.tableOfContents : []
                 }
               />
-
               <ThemeContext.Consumer>
                 {theme => (
                   <Comment commentBox={commentBox} theme={theme.dark}/>

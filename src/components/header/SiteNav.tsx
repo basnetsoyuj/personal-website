@@ -99,7 +99,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 <Link to="/about">About</Link>
               </li>
               <li role="menuitem">
-                <a href={config.portfolioUrl} target="_blank">Website</a>
+                <a href={config.portfolioUrl} target="_blank">
+                  Website
+                </a>
               </li>
             </ul>
             {isPost && (
@@ -109,6 +111,11 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             )}
           </SiteNavContent>
         </SiteNavLeft>
+        <DarkModeSiteNavRight>
+          <div css={darkmodeButton}>
+            <DarkModeToggle />
+          </div>
+        </DarkModeSiteNavRight>
         <SiteNavRight>
           <SocialLinks>
             {config.facebook && (
@@ -135,7 +142,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               </a>
             )}
           </SocialLinks>
-          <div css={darkmodeButton}><DarkModeToggle/></div>
+          <div css={darkmodeButton}>
+            <DarkModeToggle />
+          </div>
           {config.showSubscribe && (
             <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
           )}
@@ -247,15 +256,15 @@ const NavStyles = css`
 `;
 
 const darkmodeButton = css`
-    position: relative;
-    display: block;
-    fill: #fff;
-    opacity: 0.8;
-    transition: opacity 0.35s ease-in-out;
-    :hover {
-      text-decoration: none;
-      opacity: 1;
-    }
+  position: relative;
+  display: block;
+  fill: #fff;
+  opacity: 0.8;
+  transition: opacity 0.35s ease-in-out;
+  :hover {
+    text-decoration: none;
+    opacity: 1;
+  }
 `;
 
 const SiteNavRight = styled.div`
@@ -271,6 +280,19 @@ const SiteNavRight = styled.div`
   }
 `;
 
+const DarkModeSiteNavRight = styled.div`
+flex: 0 1 auto;
+display: none;
+align-items: center;
+justify-content: flex-end;
+padding: 10px 0;
+margin: 0 7px;
+height: 64px;
+
+@media (max-width: 700px) {
+  display: flex;
+}
+`;
 const SocialLinks = styled.div`
   flex-shrink: 0;
   display: flex;

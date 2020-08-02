@@ -36,7 +36,7 @@ export const PostFullContent = styled.section`
   display: block;
   position: relative;
   margin: 0 auto;
-  padding: 0 170px 6vw;
+  padding: 0 170px;
   min-height: 230px;
   font-family: Euclid, 'Century Gothic';
   font-size: 2rem;
@@ -44,7 +44,7 @@ export const PostFullContent = styled.section`
   background: #fff;
 
   @media (min-width: 1170px) {
-    padding: 0 11vw;
+    // padding: 0 11vw;
     display: flex;
     align-items: flex-start;
   }

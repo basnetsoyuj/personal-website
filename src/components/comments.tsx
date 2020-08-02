@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import React from 'react';
+import {css} from '@emotion/core';
 
 const Comment = ({ commentBox,theme}) => {
   useEffect(() => {
@@ -19,6 +20,11 @@ const Comment = ({ commentBox,theme}) => {
     }
   }, []);
   
-return <div ref={commentBox} className="comments"></div>;
+return <><hr className="h_rule"/><h4 css={h4style}>COMMENTS</h4><div ref={commentBox} className="comments"></div></>;
 };
+
+const h4style = css`
+  margin: 0 20px;
+`;
+
 export default Comment;

@@ -8,3 +8,6 @@
 .clearFix {
   clear: both;
 }
+.no-100-pct{
+  width:unset !important;
+}
