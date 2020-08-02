@@ -118,7 +118,7 @@ const BlogPage: React.FC<IndexProps> = props => {
                   pageTitle
                 )}
               </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
+              <SiteDescription css={{textAlign:"center"}}>{config.description}</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
