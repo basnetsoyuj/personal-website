@@ -4,12 +4,12 @@ import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
 
-import { Footer } from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
-import { PostFullContent } from '../components/PostContent';
-import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
-import config from '../website-config';
+import { Footer } from '../../components/Footer';
+import SiteNav from '../../components/header/SiteNav';
+import { PostFullContent } from '../../components/PostContent';
+import { Wrapper } from '../../components/Wrapper';
+import IndexLayout from '../../layouts';
+import config from '../../website-config';
 import {
   inner,
   outer,
@@ -17,8 +17,8 @@ import {
   SiteHeader,
   SiteMain,
   SiteNavMain,
-} from '../styles/shared';
-import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+} from '../../styles/shared';
+import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../../templates/post';
 
 const _ = require('lodash');
 const PageTemplate = css`
@@ -87,7 +87,7 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
               <div className="post-content">
                 {Object.keys(counter).sort().map(n=>{
                   return (<div className="tags-post" css={tagCss}><div className="tag">
-                    <Link to={`/tags/${_.kebabCase(n)}`}>
+                    <Link to={`/blog/tags/${_.kebabCase(n)}`}>
                       <span className="tagName">&nbsp;{n}&nbsp;</span>
                       <span className="number-of-post">&nbsp;{counter[n]}&nbsp;</span>
                     </Link></div><div className="clearFix"></div></div>);

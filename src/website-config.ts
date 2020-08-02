@@ -47,7 +47,6 @@ export interface WebsiteConfig {
    */
   footer?: string;
   themeColor?: string;
-  portfolioUrl?: string;
 }
 
 const config: WebsiteConfig = {
@@ -66,7 +65,6 @@ const config: WebsiteConfig = {
   mailchimpAction: 'https://feedburner.google.com/fb/a/mailverify?uri=sjbblogs',
   googleSiteVerification: 'GoogleCode',
   footer: 'Soyuj Jung Basnet',
-  portfolioUrl: 'https://basnetsoyuj.com.np',
 };
 
 export default config;

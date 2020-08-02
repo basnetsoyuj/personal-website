@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/">SJB Blogs</Link> &copy; {new Date().getFullYear()}{' '}
+          <Link to="/blog">SJB Blogs</Link> &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
-            <a href={config.portfolioUrl} target="_blank">
+            <a href={config.mainSiteUrl}>
               | {config.footer}
             </a>
           )}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Zugzwang: An Enforced Elegance'
-image: img/chess.png
+image: ../img/chess.png
 author: [Soyuj Jung Basnet]
 draft: false
 date: 2019-06-18T10:00:00.000Z
@@ -42,7 +42,7 @@ Now, let’s look at a famous game: **_Fritz Sämisch versus Aron Nimzowitsch_**
 
 Here is a Zugzwang meme I couldn’t hold back.
 
-![Zugzwang Meme](img/zugzwang_meme.jpg)
+![Zugzwang Meme](../img/zugzwang_meme.jpg)
 
 **AlphaZero** — the quintessential deep reinforcement learning agent by _Google DeepMind_ — also created a Zugzwang against the popular classical chess engine Stockfish. The exact zugzwang occurs at **51. g4** !
 

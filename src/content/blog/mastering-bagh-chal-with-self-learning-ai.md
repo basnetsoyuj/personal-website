@@ -3,7 +3,7 @@ layout: post
 title: 'Mastering the Nepali Board Game of Bagh Chal with self-learning AI'
 author: [Soyuj Jung Basnet]
 tags: ['reinforcement learning', 'AI', 'engineering']
-image: img/robot.png
+image: ../img/robot.png
 date: '2020-07-24T11:46:37.121Z'
 draft: false
 excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a deep policy and value neural network along with Monte Carlo Tree Search to self-learn the traditional Nepali game of Bagh Chal.
@@ -69,11 +69,11 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>Let's look at some visualizations to clearly understand these concepts.</p>
 
-<figure><img width="600" src="img/polynomial-fitting.png" alt="Polynomial Curve Fitting"><figcaption>Polynomial Curve Fitting</figcaption></figure>
+<figure><img width="600" src="../img/polynomial-fitting.png" alt="Polynomial Curve Fitting"><figcaption>Polynomial Curve Fitting</figcaption></figure>
 
 <p>Here, the blue line shows the actual function and the purple line shows the prediction of the model. The blue circles represent the training set.</p><p>We can see that the last model correctly predicts all the training data (all points pass through the purple line). However, this model is said to be an overfit model (too specific to the training set) and it performs badly on the test set. Similarly, the first two models are said to be underfit models (too much generalization).</p><p>The third model is the best among these models even though it has a lesser accuracy than the overfitted model. The model can further be improved by using more training data as shown below.</p>
 
-<figure><img src="img/more_training_data.png" alt="Less Training Data vs More Training Data" width="650"><figcaption>Less Training Data vs More Training Data</figcaption></figure>
+<figure><img src="../img/more_training_data.png" alt="Less Training Data vs More Training Data" width="650"><figcaption>Less Training Data vs More Training Data</figcaption></figure>
 
 <p>Supervised learning can further be divided into classification and regression.</p><p>Classification problems are related to making probabilistic estimates on classifying the input data into one of many categories. Identifying handwritten digits falls under this category.</p><p>Regression problems are related to predicting real value output in continuous output space. The above problem of finding the best-fit polynomial to predict output to its other input values falls under this category.</p>
 
@@ -83,11 +83,11 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>Unsupervised learning is a type of machine learning in which the learning algorithm does not have any labels. Instead, the goal of unsupervised learning is to find the hidden structure in the input data itself and learn its features.</p><p>Some types of unsupervised learning include clustering, dimensionality reduction, and generative models.</p><p>Clustering is the method by which the input data is organized into clusters based on the similarity on some of their features and their dissimilarity with other clusters, despite having no labels.</p>
 
-<figure><img src="img/clustering.png" alt="Clustering in Unsupervised Learning" width="650"><figcaption>Clustering in Unsupervised Learning</figcaption></figure>
+<figure><img src="../img/clustering.png" alt="Clustering in Unsupervised Learning" width="650"><figcaption>Clustering in Unsupervised Learning</figcaption></figure>
 
 <p>Dimensionality reduction is used to convert a set of data in higher dimensions to lower dimensions. They can remove redundant data and only preserve the most important features. This pre-processing technique can reduce a lot of computational expenses and make the model run a lot faster.</p><p>The new unsupervised deep learning field has given rise to autoencoders. Autoencoders use deep neural networks to map input data back to themselves. The twist is that the model has a bottleneck as a hidden layer. So, it learns to represent the input in a smaller amount of data (compressed form).</p>
 
-<figure><img src="img/autoencoder.png" alt="Neural Network Architecture of Autoencoders" width="700"><figcaption>Neural Network Architecture of Autoencoders</figcaption></figure>
+<figure><img src="../img/autoencoder.png" alt="Neural Network Architecture of Autoencoders" width="700"><figcaption>Neural Network Architecture of Autoencoders</figcaption></figure>
 
 <p>Generative modeling is a task that involves learning the regularity or patterns in the input data so that the model can generate output samples similar to the input dataset.</p><p>Since my project does not use unsupervised learning, we won't go into its details in this blog. Check out the following to learn more about unsupervised learning:</p><ul><li><a target="_blank" href="https://medium.com/machine-learning-for-humans/unsupervised-learning-f45587588294">Machine Learning For Humans – Unsupervised Learning</a></li><li><a target="_blank" href="https://towardsdatascience.com/unsupervised-learning-and-data-clustering-eeecb78b422a">Unsupervised Learning and Data Clustering</a></li><li><a target="_blank" href="https://openai.com/blog/generative-models/">Generative Models</a></li></ul><hr>
 
@@ -97,7 +97,7 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>At any time step, the agent in state <strong>S<sub>1</sub></strong> takes an action <strong>A<sub>1</sub></strong>. Based on this action, the environment provides the agent with reward <strong>R<sub>1</sub></strong> and a new state <strong>S<sub>2</sub></strong>.</p>
 
-<figure><img src="img/reinforcement-learning.png" alt="The typical framing of a Reinforcement Learning (RL) scenario" width="700"><figcaption>The typical framing of a Reinforcement Learning (RL) scenario</figcaption></figure>
+<figure><img src="../img/reinforcement-learning.png" alt="The typical framing of a Reinforcement Learning (RL) scenario" width="700"><figcaption>The typical framing of a Reinforcement Learning (RL) scenario</figcaption></figure>
 
 <p>A reward is a scalar feedback signal which indicates how well an agent is doing. The agent's goal is to maximize the reward signal. For instance, in the example of flying stunt maneuvers in a helicopter,</p>
 
@@ -131,7 +131,7 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>Let's look at one more example where the representation of the data plays an important role in the performance of the ML model.</p>
 
-<figure><img src="img/cartesian-vs-polar.png" alt="Representation of data in Cartesian vs Polar coordinates" width="750"><figcaption>Representation of data in Cartesian vs Polar coordinates</figcaption></figure>
+<figure><img src="../img/cartesian-vs-polar.png" alt="Representation of data in Cartesian vs Polar coordinates" width="750"><figcaption>Representation of data in Cartesian vs Polar coordinates</figcaption></figure>
 
 <p>Here, it is impossible to separate the two sets of data in cartesian coordinates with a linear model. However, just changing the representation of data to polar coordinates makes this task an easy one.</p>
 
@@ -143,11 +143,11 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>Whenever we go from one technique to another, we substitute one problem for another one. Now, the major challenge in representation learning is to find a way for the model to learn the features by itself. However, it is very difficult to extract high level, abstract features from raw data directly. This is where deep learning comes to the rescue.</p><p>Deep Learning is a type of representation learning where the <strong>representations are expressed in terms of other simpler representations</strong>. This allows the computer to build complex features from simpler features.</p>
 
-<figure><img src="img/representation-learning.png" alt="Difference between Rule-based, Classical Machine Learning, and Representation Learning Systems" width="700"><figcaption>Difference between Rule-based, Classical ML, and Representation Learning Systems</figcaption></figure>
+<figure><img src="../img/representation-learning.png" alt="Difference between Rule-based, Classical Machine Learning, and Representation Learning Systems" width="700"><figcaption>Difference between Rule-based, Classical ML, and Representation Learning Systems</figcaption></figure>
 
 <p>The quintessential example of a deep learning model is the multilayer perceptron that maps the input to the output. Let's look at an illustration of how a deep learning model learns to recognize complex patterns by building upon simpler concepts in the data.</p>
 
-<figure><img src="img/deep-learning-neural-net.png" alt="Illustration of how deep neural networks build complex representations from simpler ones" width="750"><figcaption>Illustration of how deep neural networks build complex representations from simpler ones</figcaption></figure>
+<figure><img src="../img/deep-learning-neural-net.png" alt="Illustration of how deep neural networks build complex representations from simpler ones" width="750"><figcaption>Illustration of how deep neural networks build complex representations from simpler ones</figcaption></figure>
 
 <p>Even though each pixel value of the image has no correlation with identifying the object in the image, the deep learning model builds a hierarchical structure to learn representations. It first learns to detect edges that makeup corners and contours which in turn gives rise to the object parts. These object parts are then finally able to detect the object in the image.</p>
 
@@ -179,15 +179,15 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <ol><li><strong>Goat Placement phase</strong><br>During the placement phase, twenty goats are placed one after the other in one of the empty slots on the board while tigers move around. Goats are not allowed to move until all goats have been placed.</li><li><strong>Goat Movement phase</strong><br>The movement phase continues with both players moving their corresponding pieces.</li></ol><p>Pieces can move from their corresponding slot to other empty slots along the grid lines.</p>
 
-<figure><img src="img/bagh_chal_goat_move.png" alt="The Moveable Goats can jump along the grid-lines to an empty slot." width="750"><figcaption>The Moveable Goats can jump along the grid-lines to an empty slot.</figcaption></figure>
+<figure><img src="../img/bagh_chal_goat_move.png" alt="The Moveable Goats can jump along the grid-lines to an empty slot." width="750"><figcaption>The Moveable Goats can jump along the grid-lines to an empty slot.</figcaption></figure>
 
 <p>Throughout the game, tigers also have a special <strong>Capture</strong> move, where they can jump over a goat along the grid lines to an empty slot, thereby removing the goat from the board.</p>
 
-<figure><img src="img/baghchal_capture_move.png" alt="The Tigers can jump over a Goat to capture it." width="750"><figcaption>The Tigers can jump over a Goat to capture it.</figcaption></figure>
+<figure><img src="../img/baghchal_capture_move.png" alt="The Tigers can jump over a Goat to capture it." width="750"><figcaption>The Tigers can jump over a Goat to capture it.</figcaption></figure>
 
 <p>This asymmetric game proceeds with tigers trying to capture goats and goats trying to trap tigers (without any legal moves). The game is over when either the tigers capture five goats or the goats have blocked the legal moves for all tigers. In some rare cases, tigers can also win by blocking all the legal moves for goats.</p>
 
-<figure><img src="img/moveable_tiger_trapped_tiger.png" alt="Moveable Tigers and Trapped Tigers in Bagh Chal" width="750"><figcaption>Moveable Tigers and Trapped Tigers in Bagh Chal</figcaption></figure>
+<figure><img src="../img/moveable_tiger_trapped_tiger.png" alt="Moveable Tigers and Trapped Tigers in Bagh Chal" width="750"><figcaption>Moveable Tigers and Trapped Tigers in Bagh Chal</figcaption></figure>
 
 ### Ambiguous Rules
 
@@ -260,7 +260,7 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 	<li>The policy vector outputs a vector of move probabilities <strong>p</strong> with components <strong>p<sub>a</sub></strong> <strong>= Pr(a|s)</strong> for each action <strong>a</strong>. They serve as 0-ply strategies, since they do not perform any look-ahead and thus correspond to intuitive play, previously thought to be exclusive only to human players.</li>
 </ol>
 
-<figure><img src="img/policy-value-net.png" alt="The AI agent uses a Policy Value Network" width="750"><figcaption>The AI agent uses a Policy Value Network</figcaption></figure>
+<figure><img src="../img/policy-value-net.png" alt="The AI agent uses a Policy Value Network" width="750"><figcaption>The AI agent uses a Policy Value Network</figcaption></figure>
 
 <p>A number of simulations are played out from the root (current position) to a leaf node, employing Monte Carlo tree search (<strong>MCTS</strong>) algorithm that utilizes raw output from the neural network to selectively explore the most promising moves. Evaluation from the MCTS are then used to improve parameters of the neural network. This iterative relation between the neural network and tree search allows the agent to start from the ground up and continually get stronger from self-play, after every iteration.</p>
 
@@ -284,11 +284,11 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p>The policy network outputs a 217 dimensional vector that represents all the moves that are possible in Bagh Chal at any point. It is a probability distribution for all moves and thus adds up to 1. It uses Categorical Cross-Entropy as the loss function.</p><p>The value network outputs a single scalar value between <strong>-1</strong> (Represents Tiger player is winning) and <strong>1</strong> (Represents Goat player is winning). It uses Mean Squared error as the loss function.</p><p>All in all, the policy network combined with the MCTS helps in reducing the breadth of the tree search.</p>
 
-<figure><img src="img/policy_net.png" alt="The policy network reduces the breadth of tree search by exploring only few promising moves." width="750"><figcaption>The policy network reduces the breadth of tree search by exploring only few promising moves.</figcaption></figure>
+<figure><img src="../img/policy_net.png" alt="The policy network reduces the breadth of tree search by exploring only few promising moves." width="750"><figcaption>The policy network reduces the breadth of tree search by exploring only few promising moves.</figcaption></figure>
 
 <p>Similarly, the value network helps in reducing the depth of the tree search.</p>
 
-<figure><img src="img/value_net.png" alt="The value network reduces the depth of tree search by returning the evaluation of a certain position." width="750"><figcaption>The value network reduces the depth of tree search by returning the evaluation of a certain position.</figcaption></figure>
+<figure><img src="../img/value_net.png" alt="The value network reduces the depth of tree search by returning the evaluation of a certain position." width="750"><figcaption>The value network reduces the depth of tree search by returning the evaluation of a certain position.</figcaption></figure>
 
 <hr><h3 id="training">Training</h3>
 

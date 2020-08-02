@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     title: 'Soyuj Jung Basnet',
     description:
-      'A personal blogging website for Soyuj Jung Basnet to put down his thoughts, musings and experiences.',
+      'A personal portfolio and blogging website of Soyuj Jung Basnet. Thoughts, musings, experiences, tutorials, snippets, articles, and everything else.',
     siteUrl: 'https://basnetsoyuj.com.np', // full path to blog - no ending slash
   },
   mapping: {

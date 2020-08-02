@@ -3,7 +3,7 @@ layout: post
 title: 'baghchal v1.0.1 Release'
 author: [Soyuj Jung Basnet]
 tags: ['board game','engineering','python']
-image: img/baghchal.jpg
+image: ../img/baghchal.jpg
 date: '2019-06-27T11:46:37.121Z'
 draft: false
 excerpt: baghchal is a pure Python Bagh Chal library that supports game import, move generation, move validation, and board image rendering. It also comes with a simple engine based on the minimax algorithm and alpha-beta pruning.

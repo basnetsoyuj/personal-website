@@ -66,7 +66,7 @@ export const AuthorListItem: React.FC<AuthorListItemProps> = props => {
       <Link
         css={AuthorAvatar}
         className="author-avatar"
-        to={`/author/${_.kebabCase(props.author.id)}/`}
+        to={`/blog/author/${_.kebabCase(props.author.id)}/`}
       >
         <Img
           css={AuthorProfileImage}

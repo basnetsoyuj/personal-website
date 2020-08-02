@@ -98,12 +98,12 @@ const Author: React.FC<AuthorTemplateProps> = props => {
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="profile" />
         <meta property="og:title" content={`${author.id} | ${config.title}`} />
-        <meta property="og:url" content={`${config.siteUrl}/author/${_.kebabCase(author.id)}/`} />
+        <meta property="og:url" content={`${config.siteUrl}/blog/author/${_.kebabCase(author.id)}/`} />
         <meta property="article:publisher" content={`https://www.github.com/${author.github}`} />
         <meta property="article:author" content={`https://www.github.com/${author.github}`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`${author.id} | ${config.title}`} />
-        <meta name="twitter:url" content={`${config.siteUrl}/author/${_.kebabCase(author.id)}/`} />
+        <meta name="twitter:url" content={`${config.siteUrl}/blog/author/${_.kebabCase(author.id)}/`} />
         {config.twitter && (
           <meta
             name="twitter:site"
