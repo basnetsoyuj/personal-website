@@ -49,6 +49,7 @@ export interface WebsiteConfig {
    */
   footer?: string;
   themeColor?: string;
+  blogTitle?: string;
 }
 
 const config: WebsiteConfig = {
@@ -59,7 +60,8 @@ const config: WebsiteConfig = {
   blogLogo: 'img/blog-logo.png',
   lang: 'en',
   themeColor: '#26A6ED',
-  siteUrl: 'https://basnetsoyuj.com.np',
+  siteUrl: 'https://soyuj.com.np',
+  blogTitle: 'Soyuj Jung Basnet Blogs',
   facebook: 'https://github.com/basnetsoyuj',
   twitter: 'https://twitter.com/basnetsoyuj',
   showSubscribe: true,

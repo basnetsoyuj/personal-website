@@ -1,4 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://soyuj.com.np',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 const path = require('path');
 
 function filterHTML(str, url) {
@@ -11,13 +20,18 @@ module.exports = {
     title: 'Soyuj Jung Basnet',
     description:
       'A personal portfolio and blogging website of Soyuj Jung Basnet. Thoughts, musings, experiences, tutorials, snippets, articles, and everything else.',
-    siteUrl: 'https://basnetsoyuj.com.np', // full path to blog - no ending slash
+    siteUrl: 'https://soyuj.com.np', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
   },
   plugins: [
-    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/blog/author/*`],
+      }
+    },
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -40,26 +54,39 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    },
+    {
       resolve: `gatsby-transformer-rehype`,
       options: {
-        // Condition for selecting an existing GrapghQL node (optional)
-        // If not set, the transformer operates on file nodes.
         filter: node => node.internal.type === `MarkdownRemark`,
-        // Only needed when using filter (optional, default: node.html)
-        // Source location of the html to be transformed
         source: node => node.rawMarkdownBody,
-        // Additional fields of the sourced node can be added here (optional)
-        // These fields are then available on the htmlNode on `htmlNode.context`
         contextFields: [],
-        // Fragment mode (optional, default: true)
         fragment: true,
-        // Space mode (optional, default: `html`)
         space: `html`,
-        // EmitParseErrors mode (optional, default: false)
         emitParseErrors: false,
-        // Verbose mode (optional, default: false)
         verbose: true,
-        // Plugins configs (optional but most likely you need one)
         plugins: [],
       },
     },
@@ -91,7 +118,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://basnetsoyuj.com.np',
+        siteUrl: 'https://soyuj.com.np',
       },
     },
     'gatsby-plugin-emotion',
@@ -119,7 +146,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
+                  description: edge.node.frontmatter.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -136,11 +163,11 @@ module.exports = {
                 ) {
                   edges {
                     node {
-                      excerpt
                       html
                       fields { slug }
                       frontmatter {
                         title
+                        excerpt
                         date
                       }
                     }
@@ -170,7 +197,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-173253254-2',
+        trackingId: 'UA-174291638-1',
         // Puts tracking script in the head instead of the body
         head: true,
         // IP anonymization for GDPR compliance

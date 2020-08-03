@@ -92,17 +92,17 @@ const Author: React.FC<AuthorTemplateProps> = props => {
       <Helmet>
         <html lang={config.lang} />
         <title>
-          {author.id} | {config.title}
+          {author.id} | {config.blogTitle}
         </title>
         <meta name="description" content={author.bio} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="profile" />
-        <meta property="og:title" content={`${author.id} | ${config.title}`} />
+        <meta property="og:title" content={`${author.id} | ${config.blogTitle}`} />
         <meta property="og:url" content={`${config.siteUrl}/blog/author/${_.kebabCase(author.id)}/`} />
         <meta property="article:publisher" content={`https://www.github.com/${author.github}`} />
         <meta property="article:author" content={`https://www.github.com/${author.github}`} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${author.id} | ${config.title}`} />
+        <meta name="twitter:title" content={`${author.id} | ${config.blogTitle}`} />
         <meta name="twitter:url" content={`${config.siteUrl}/blog/author/${_.kebabCase(author.id)}/`} />
         {config.twitter && (
           <meta

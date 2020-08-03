@@ -54,7 +54,7 @@ export interface IndexProps {
     };
   };
 }
-const pageTitle = config.title + ' Blogs';
+const pageTitle = config.blogTitle;
 const pageUrl = config.siteUrl + ' /blog';
 
 const BlogPage: React.FC<IndexProps> = props => {

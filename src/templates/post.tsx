@@ -266,7 +266,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
               </ThemeContext.Consumer>
 
               {/* The big email subscribe modal content */}
-              {config.showSubscribe && <Subscribe title={config.title} />}
+              {config.showSubscribe && <Subscribe title={config.blogTitle} />}
             </article>
           </div>
         </main>

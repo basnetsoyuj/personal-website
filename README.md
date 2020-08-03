@@ -1,6 +1,6 @@
 # Personal Portfolio and Blogging Website 
 
-[https://basnetsoyuj.com.np/](https://basnetsoyuj.com.np/)
+[https://soyuj.com.np/](https://soyuj.com.np/)
 
 Soyuj Jung Basnet's personal website is powered by Gatsby, React, Node.js, GitHub and Netlify.
 

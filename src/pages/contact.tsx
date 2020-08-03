@@ -65,7 +65,7 @@ const Contact: React.FC = () => (
                   If you are interested in my work, have a question, or want to leave a feedback, please feel free to contact me via <a href="mailto:bsoyuj@gmail.com">mail</a>. I am also available on <a href="https://twitter.com/basnetsoyuj" target="_blank">Twitter</a>.
                 </p>
                 <h5>Report Issues</h5>
-                <p>If you want to report typos, grammatical errors, or any other types of inaccuracies in the blog, please open an issue <a href="https://github.com/basnetsoyuj/personal-blog/issues/new" target="_blank">here</a>. Your help will prove invaluable to make this blog more reliable and accurate.</p>
+                <p>If you want to report typos, grammatical errors, or any other types of inaccuracies in the blog, please open an issue <a href="https://github.com/basnetsoyuj/personal-website/issues/new" target="_blank">here</a>. Your help will prove invaluable to make this blog more reliable and accurate.</p>
               </div>
             </PostFullContent>
           </article>

@@ -56,15 +56,15 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
   };
   return (<IndexLayout>
     <Helmet>
-      <title>{`${page_name} | ${config.title}`}</title>
+      <title>{`${page_name} | ${config.blogTitle}`}</title>
       <meta name="description" content={config.description} />
       <meta property="og:site_name" content={config.title} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={`${page_name} | ${config.title}`} />
+      <meta property="og:title" content={`${page_name} | ${config.blogTitle}`} />
       <meta property="og:description" content={config.description} />
       <meta property="og:url" content={config.siteUrl + '/' + page_name.toLowerCase()} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`${page_name} | ${config.title}`} />
+      <meta name="twitter:title" content={`${page_name} | ${config.blogTitle}`} />
       <meta name="twitter:description" content={config.description} />
       <meta name="twitter:url" content={config.siteUrl + '/' + page_name.toLowerCase()} />
     </Helmet>

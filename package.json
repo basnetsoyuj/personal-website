@@ -31,6 +31,7 @@
     "gatsby-plugin-nprogress": "^2.3.10",
     "gatsby-plugin-postcss": "2.3.4",
     "gatsby-plugin-react-helmet": "3.3.4",
+    "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "2.6.11",
     "gatsby-plugin-sitemap": "2.4.5",
     "gatsby-plugin-typescript": "2.4.6",

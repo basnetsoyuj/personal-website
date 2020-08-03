@@ -13,11 +13,9 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/blog">SJB Blogs</Link> &copy; {new Date().getFullYear()}{' '}
+          &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
-            <Link to="/">
-              | {config.footer}
-            </Link>
+              <>- {config.footer}</>
           )}
         </section>
         <SiteFooterNav>
@@ -32,7 +30,6 @@ export const Footer: React.FC = () => {
               Twitter
             </a>
           )}
-          <Link to="/contact">Contact</Link>
           <a href="/rss.xml">RSS</a>
         </SiteFooterNav>
       </div>
