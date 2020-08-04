@@ -15,7 +15,7 @@ import { SiteNavLogo } from './SiteNavLogo';
 import DarkModeToggle from '../DarkModeToggle';
 
 interface SiteNavProps {
-  isHome?: boolean;
+  isTags?: boolean;
   isPost?: boolean;
   isBlog?: boolean;
 
@@ -83,7 +83,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   };
 
   render(): JSX.Element {
-    const { isBlog = false, isPost = false, post = {} } = this.props;
+    const { isTags=false, isBlog = false, isPost = false, post = {} } = this.props;
     return (
       <nav css={SiteNavStyles}>
         <SiteNavLeft className="site-nav-left">
@@ -94,7 +94,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/">Home</Link>
               </li>
-              <li role="menuitem">
+              <li role="menuitem" className={isTags?'nav-current':''}>
                 <Link to="/blog/tags">Tags</Link>
               </li>
               <li role="menuitem">

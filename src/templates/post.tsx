@@ -205,7 +205,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                     post.frontmatter.tags.length > 0 &&
                     post.frontmatter.tags.map(node => (
                       <div>
-                        <Link to={`/blog/tags/${_.kebabCase(node)}/`} className="inline-tag">
+                        <Link to={`/blog/tags/${_.kebabCase(node)}/`} css={inlineTag}>
                           {node}
                         </Link>
                         {post.frontmatter.tags.lastIndexOf(node) !==
@@ -260,9 +260,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                 }
               />
               <ThemeContext.Consumer>
-                {theme => (
-                  <Comment commentBox={commentBox} theme={theme.dark}/>
-                )}
+                {theme => <Comment commentBox={commentBox} theme={theme.dark} />}
               </ThemeContext.Consumer>
 
               {/* The big email subscribe modal content */}
@@ -289,6 +287,11 @@ const PostTemplate = css`
     margin-top: 64px;
     background: #fff;
     padding-bottom: 4vw;
+  }
+`;
+const inlineTag = css`
+  @media(max-width: 400px) {
+    font-size: 1.1rem;
   }
 `;
 

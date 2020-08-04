@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
-import SiteNav from '../components/header/SiteNav';
+import SiteNav from '../components/main_header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';

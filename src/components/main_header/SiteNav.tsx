@@ -16,8 +16,10 @@ import DarkModeToggle from '../DarkModeToggle';
 
 interface SiteNavProps {
   isHome?: boolean;
+  isContact?: boolean;
   isPost?: boolean;
-  isBlog?: boolean;
+  isAbout?: boolean;
+
 
   post?: any;
 }
@@ -83,7 +85,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   };
 
   render(): JSX.Element {
-    const { isPost = false, post = {} } = this.props;
+    const { isContact=false, isAbout = false, isPost = false, post = {} } = this.props;
     return (
       <nav css={SiteNavStyles}>
         <SiteNavLeft className="site-nav-left">
@@ -94,11 +96,11 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/blog">Blog</Link>
               </li>
-              <li role="menuitem">
+              <li role="menuitem" className={isAbout?'nav-current':''}>
                 <Link to="/about">About</Link>
               </li>
               <li role="menuitem">
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className={isContact?'nav-current':''}>Contact</Link>
               </li>
             </ul>
             {isPost && (
@@ -245,6 +247,9 @@ const NavStyles = css`
   li a:hover:before {
     right: 12px;
     opacity: 0.5;
+  }
+  .nav-current a{
+    opacity: 1;
   }
 `;
 
