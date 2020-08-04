@@ -250,6 +250,11 @@ const NavStyles = css`
     right: 12px;
     opacity: 0.5;
   }
+
+  .nav-current a{
+    opacity: 1;
+    font-weight: 700;
+  }
 `;
 
 const darkmodeButton = css`

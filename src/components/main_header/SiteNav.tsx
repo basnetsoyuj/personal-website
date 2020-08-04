@@ -99,8 +99,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem" className={isAbout?'nav-current':''}>
                 <Link to="/about">About</Link>
               </li>
-              <li role="menuitem">
-                <Link to="/contact" className={isContact?'nav-current':''}>Contact</Link>
+              <li role="menuitem" className={isContact?'nav-current':''}>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
             {isPost && (
@@ -250,6 +250,7 @@ const NavStyles = css`
   }
   .nav-current a{
     opacity: 1;
+    font-weight: 700;
   }
 `;
 

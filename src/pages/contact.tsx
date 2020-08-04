@@ -47,7 +47,7 @@ const Contact: React.FC = () => (
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
         <div css={[outer, SiteNavMain]}>
           <div css={inner}>
-            <SiteNav isHome={false} />
+            <SiteNav isContact={true} />
           </div>
         </div>
       </header>

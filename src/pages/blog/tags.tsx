@@ -72,7 +72,7 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
         <div css={[outer, SiteNavMain]}>
           <div css={inner}>
-            <SiteNav isHome={false} />
+            <SiteNav isTags={true} />
           </div>
         </div>
       </header>
