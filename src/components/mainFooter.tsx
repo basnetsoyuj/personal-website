@@ -13,10 +13,9 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          &copy; {new Date().getFullYear()}{' '}
-          {config.footer && (
-              <>- {config.footer}</>
-          )}
+        {config.footer && (
+              <>{config.footer}</>
+          )} &copy; {new Date().getFullYear()}{' '}
         </section>
         <SiteFooterNav>
           <Link to="/blog">Latest Posts</Link>
