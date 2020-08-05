@@ -11,9 +11,6 @@
 .no-100-pct {
   width: unset !important;
 }
-.fixed-nav-active {
-}
-
 .site-nav-main {
   z-index: 100;
   position: fixed !important;
@@ -26,6 +23,5 @@
 }
 .site-nav-main.show{
   opacity: 1;
-  transition: opacity 0.25s;
   pointer-events: unset;
 }

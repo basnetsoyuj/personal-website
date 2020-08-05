@@ -146,7 +146,7 @@ const BlogPage: React.FC<IndexProps> = props => {
         )}
         <div css={outer} className="site-nav-main">
           <div css={inner}>
-            <SiteNav isMain/>
+            <SiteNav />
           </div>
         </div>
         <Footer />

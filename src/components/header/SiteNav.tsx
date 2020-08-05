@@ -63,10 +63,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   onScrollNav = () => {
     const headerBackground = document.getElementsByClassName('site-header-background')[0];
     if (this.isBottom(headerBackground)) {
-      document.getElementById('navBarCopy')?.classList.add('fixed-nav-active');
       document.getElementsByClassName('site-nav-main')[0].classList.add('show');
     } else {
-      document.getElementById('navBarCopy')?.classList.remove('fixed-nav-active');
       document.getElementsByClassName('site-nav-main')[0].classList.remove('show');
     }
   };
@@ -105,14 +103,13 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
 
   render(): JSX.Element {
     const {
-      isMain = false,
       isTags = false,
       isBlog = false,
       isPost = false,
       post = {},
     } = this.props;
     return (
-      <nav css={SiteNavStyles} id={isMain ? 'navBarCopy' : ''}>
+      <nav css={SiteNavStyles}>
         <SiteNavLeft className="site-nav-left">
           {!isBlog && <SiteNavLogo />}
           <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
