@@ -54,7 +54,25 @@ module.exports = {
         showSpinner: false,
       },
     },
-
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `excerpt`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            excerpt: node => node.frontmatter.excerpt,
+            tags: node => node.frontmatter.tags,
+            path: node => node.fields.slug,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

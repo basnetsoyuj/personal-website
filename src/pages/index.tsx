@@ -8,6 +8,8 @@ import { css } from '@emotion/core';
 import { Footer } from '../components/mainFooter';
 import SiteNav from '../components/main_header/SiteNav';
 import { Wrapper } from '../components/Wrapper';
+import Header from '../components/searchHeader';
+
 import IndexLayout from '../layouts';
 import {
   inner,
@@ -89,6 +91,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
         <div css={inner}>
+          <Header/>
         </div>
         </main>
 
