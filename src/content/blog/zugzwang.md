@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Zugzwang: An Enforced Elegance'
-image: ../img/chess.png
+image: ../img/chess.jpg
 author: [Soyuj Jung Basnet]
 draft: false
 date: 2019-06-18T10:00:00.000Z
