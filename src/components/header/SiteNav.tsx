@@ -18,7 +18,7 @@ interface SiteNavProps {
   isTags?: boolean;
   isPost?: boolean;
   isBlog?: boolean;
-
+  isMain?: boolean;
   post?: any;
 }
 
@@ -43,12 +43,33 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     this.lastScrollY = window.scrollY;
     if (this.props.isPost) {
       window.addEventListener('scroll', this.onScroll, { passive: true });
+    } else {
+      window.addEventListener('scroll', this.onScrollNav);
     }
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('scroll', this.onScroll);
+    if (this.props.isPost) {
+      window.removeEventListener('scroll', this.onScroll);
+    } else {
+      window.removeEventListener('scroll', this.onScrollNav);
+    }
   }
+
+  isBottom(el) {
+    return el.getBoundingClientRect().bottom <= 64;
+  }
+
+  onScrollNav = () => {
+    const headerBackground = document.getElementsByClassName('site-header-background')[0];
+    if (this.isBottom(headerBackground)) {
+      document.getElementById('navBarCopy')?.classList.add('fixed-nav-active');
+      document.getElementsByClassName('site-nav-main')[0].classList.add('show');
+    } else {
+      document.getElementById('navBarCopy')?.classList.remove('fixed-nav-active');
+      document.getElementsByClassName('site-nav-main')[0].classList.remove('show');
+    }
+  };
 
   onScroll = () => {
     if (!this.titleRef || !this.titleRef.current) {
@@ -83,9 +104,15 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   };
 
   render(): JSX.Element {
-    const { isTags=false, isBlog = false, isPost = false, post = {} } = this.props;
+    const {
+      isMain = false,
+      isTags = false,
+      isBlog = false,
+      isPost = false,
+      post = {},
+    } = this.props;
     return (
-      <nav css={SiteNavStyles}>
+      <nav css={SiteNavStyles} id={isMain ? 'navBarCopy' : ''}>
         <SiteNavLeft className="site-nav-left">
           {!isBlog && <SiteNavLogo />}
           <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
@@ -94,7 +121,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/">Home</Link>
               </li>
-              <li role="menuitem" className={isTags?'nav-current':''}>
+              <li role="menuitem" className={isTags ? 'nav-current' : ''}>
                 <Link to="/blog/tags">Tags</Link>
               </li>
               <li role="menuitem">
@@ -251,7 +278,7 @@ const NavStyles = css`
     opacity: 0.5;
   }
 
-  .nav-current a{
+  .nav-current a {
     opacity: 1;
     font-weight: 700;
   }
@@ -283,17 +310,17 @@ const SiteNavRight = styled.div`
 `;
 
 const DarkModeSiteNavRight = styled.div`
-flex: 0 1 auto;
-display: none;
-align-items: center;
-justify-content: flex-end;
-padding: 10px 0;
-margin: 0 7px;
-height: 64px;
+  flex: 0 1 auto;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 0;
+  margin: 0 7px;
+  height: 64px;
 
-@media (max-width: 700px) {
-  display: flex;
-}
+  @media (max-width: 700px) {
+    display: flex;
+  }
 `;
 const SocialLinks = styled.div`
   flex-shrink: 0;

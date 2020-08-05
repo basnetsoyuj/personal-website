@@ -118,7 +118,7 @@ const BlogPage: React.FC<IndexProps> = props => {
                   pageTitle
                 )}
               </SiteTitle>
-              <SiteDescription css={{textAlign:"center"}}>{config.description}</SiteDescription>
+              <SiteDescription css={{ textAlign: 'center' }}>{config.description}</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
@@ -144,6 +144,11 @@ const BlogPage: React.FC<IndexProps> = props => {
             numPages={props.pageContext.numPages}
           />
         )}
+        <div css={outer} className="site-nav-main">
+          <div css={inner}>
+            <SiteNav isMain/>
+          </div>
+        </div>
         <Footer />
       </Wrapper>
     </IndexLayout>

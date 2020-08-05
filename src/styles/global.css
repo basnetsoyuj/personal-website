@@ -8,6 +8,24 @@
 .clearFix {
   clear: both;
 }
-.no-100-pct{
-  width:unset !important;
+.no-100-pct {
+  width: unset !important;
+}
+.fixed-nav-active {
+}
+
+.site-nav-main {
+  z-index: 100;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #090a0b;
+  opacity: 0;
+  pointer-events: none;
+}
+.site-nav-main.show{
+  opacity: 1;
+  transition: opacity 0.25s;
+  pointer-events: unset;
 }
