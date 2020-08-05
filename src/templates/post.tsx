@@ -205,7 +205,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                     post.frontmatter.tags.length > 0 &&
                     post.frontmatter.tags.map(node => (
                       <div>
-                        <Link to={`/blog/tags/${_.kebabCase(node)}/`} css={inlineTag}>
+                        <Link to={`/blog/tags/${_.kebabCase(node)}`} css={inlineTag}>
                           {node}
                         </Link>
                         {post.frontmatter.tags.lastIndexOf(node) !==
@@ -223,7 +223,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                     <section className="post-full-byline-meta">
                       <h4 className="author-name">
                         {post.frontmatter.author.map(author => (
-                          <Link key={author.id} to={`/blog/author/${_.kebabCase(author.id)}/`}>
+                          <Link key={author.id} to={`/blog/author/${_.kebabCase(author.id)}`}>
                             {author.id}
                           </Link>
                         ))}

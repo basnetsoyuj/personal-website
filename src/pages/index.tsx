@@ -19,26 +19,37 @@ import {
   SiteTitle,
   SiteHeaderStyles,
 } from '../styles/shared';
+
 import config from '../website-config';
 
+export interface IndexProps {
+  data: {
+    ogImage: {
+      childImageSharp: {
+        fixed: FixedObject;
+      };
+  };
+}
+}
 const pageTitle = config.title;
 const pageUrl = config.siteUrl;
 
-const IndexPage: React.FC = props => {
+const IndexPage: React.FC<IndexProps> = props => {
+  const { width, height } = props.data.ogImage.childImageSharp.fixed;
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
         <html lang={config.lang} />
         <title>{pageTitle}</title>
-        <meta name="description" content={config.description} />
+        <meta name="description" content={config.mainDescription} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={config.description} />
+        <meta property="og:description" content={config.mainDescription} />
         <meta property="og:url" content={pageUrl} />
         <meta
           property="og:image"
-          content={`IMG`}
+          content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
         />
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.googleSiteVerification && (
@@ -50,7 +61,7 @@ const IndexPage: React.FC = props => {
         <meta name="twitter:url" content={pageUrl} />
         <meta
           name="twitter:image"
-          content={`IMG`}
+          content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
         />
         {config.twitter && (
           <meta
@@ -58,8 +69,8 @@ const IndexPage: React.FC = props => {
             content={`@${config.twitter.split('https://twitter.com/')[1]}`}
           />
         )}
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
+        <meta property="og:image:width" content={width.toString()} />
+        <meta property="og:image:height" content={height.toString()} />
       </Helmet>
       <Wrapper>
         <div
@@ -86,6 +97,21 @@ const IndexPage: React.FC = props => {
     </IndexLayout>
   );
 };
+
+export const pageQuery = graphql`
+  query IndexPageQuery{
+    ogImage: file(relativePath: { eq: "img/main-og-image.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
+
 const HomePosts = css`
   @media (min-width: 795px) {
     .post-card-large {

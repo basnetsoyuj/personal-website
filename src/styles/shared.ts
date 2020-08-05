@@ -52,7 +52,6 @@ export const SiteDescription = styled.h2`
   line-height: 1.4em;
   font-weight: 400;
   opacity: 0.8;
-  
   @media (max-width: 500px) {
     font-size: 1.8rem;
   }

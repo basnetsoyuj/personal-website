@@ -76,11 +76,17 @@ const Tags: React.FC<TagTemplateProps> = props => {
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${tagName} | ${config.title}`} />
-        <meta property="og:url" content={`${config.siteUrl}/blog/tags/${_.kebabCase(props.pageContext.tag)}/`} />
+        <meta
+          property="og:url"
+          content={`${config.siteUrl}/blog/tags/${_.kebabCase(props.pageContext.tag)}`}
+        />
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${tagName} | ${config.title}`} />
-        <meta name="twitter:url" content={`${config.siteUrl}/blog/tags/${_.kebabCase(props.pageContext.tag)}/`} />
+        <meta
+          name="twitter:url"
+          content={`${config.siteUrl}/blog/tags/${_.kebabCase(props.pageContext.tag)}`}
+        />
         {config.twitter && (
           <meta
             name="twitter:site"
@@ -89,13 +95,10 @@ const Tags: React.FC<TagTemplateProps> = props => {
         )}
       </Helmet>
       <Wrapper>
-        <header
-          className="site-archive-header"
-          css={[SiteHeader, SiteArchiveHeader]}
-        >
+        <header className="site-archive-header" css={[SiteHeader, SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
-              <SiteNav isHome={false} />
+              <SiteNav />
             </div>
           </div>
           <ResponsiveHeaderBackground
@@ -107,10 +110,18 @@ const Tags: React.FC<TagTemplateProps> = props => {
               <SiteTitle className="site-title">#{_.kebabCase(tag)}</SiteTitle>
               <SiteDescription className="site-description">
                 {tagData?.node.description ? (
-                  <>
+                  <div
+                    css={{
+                      backgroundColor: 'rgb(0, 0, 0, 0.35)',
+                      padding: '5px 7px',
+                      marginTop: '8px',
+                    }}
+                  >
                     {tagData.node.description}
-                  </>
-                ) : (<></>)}
+                  </div>
+                ) : (
+                  <></>
+                )}
               </SiteDescription>
               <SiteDescription className="site-description">
                 A collection of {totalCount > 1 && `${totalCount} posts`}

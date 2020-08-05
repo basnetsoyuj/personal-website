@@ -50,11 +50,13 @@ export interface WebsiteConfig {
   footer?: string;
   themeColor?: string;
   blogTitle?: string;
+  mainDescription?: string;
 }
 
 const config: WebsiteConfig = {
   title: 'Soyuj Jung Basnet',
   description: 'A collection of my thoughts, musings, and experiences.',
+  mainDescription: 'A personal portfolio and blogging website of Soyuj Jung Basnet. Thoughts, musings, experiences, tutorials, snippets, articles, and everything else.',
   coverImage: 'img/blog-cover.jpg',
   logo: 'img/logo.png',
   blogLogo: 'img/blog-logo.png',

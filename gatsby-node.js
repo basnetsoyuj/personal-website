@@ -174,7 +174,7 @@ exports.createPages = async ({ graphql, actions }) => {
   );
   tags.forEach(tag => {
     createPage({
-      path: `/blog/tags/${_.kebabCase(tag)}/`,
+      path: `/blog/tags/${_.kebabCase(tag)}`,
       component: tagTemplate,
       context: {
         tag,
@@ -186,7 +186,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const authorTemplate = path.resolve('./src/templates/author.tsx');
   result.data.allAuthorYaml.edges.forEach(edge => {
     createPage({
-      path: `/blog/author/${_.kebabCase(edge.node.id)}/`,
+      path: `/blog/author/${_.kebabCase(edge.node.id)}`,
       component: authorTemplate,
       context: {
         author: edge.node.id,
