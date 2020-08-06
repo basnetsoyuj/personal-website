@@ -4,6 +4,7 @@ title: 'Zugzwang: An Enforced Elegance'
 image: ../img/chess.jpg
 author: [Soyuj Jung Basnet]
 draft: false
+img_credit: ['Mohamed Chahin', 'https://dribbble.com/shots/5811880-Pawn-of-War-WIP?utm_source=Clipboard_Shot&utm_campaign=MohChahin&utm_content=Pawn%20of%20War%20(WIP)&utm_medium=Social_Share']
 date: 2019-06-18T10:00:00.000Z
 tags:
   - chess

@@ -63,6 +63,7 @@ interface PageTemplateProps {
         title: string;
         date: string;
         userDate: string;
+        img_credit: String[];
         image: {
           childImageSharp: {
             fluid: any;
@@ -251,6 +252,14 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                     fluid={post.frontmatter.image.childImageSharp.fluid}
                     alt={post.frontmatter.title}
                   />
+                  {post.frontmatter.img_credit && (
+                    <figcaption>
+                      Image Credit:{' '}
+                      <a href={post.frontmatter.img_credit[1]} target="_blank">
+                        {post.frontmatter.img_credit[0]}
+                      </a>
+                    </figcaption>
+                  )}
                 </PostFullImage>
               )}
               <PostContent
@@ -290,7 +299,7 @@ const PostTemplate = css`
   }
 `;
 const inlineTag = css`
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     font-size: 1.1rem;
   }
 `;
@@ -446,6 +455,18 @@ const PostFullImage = styled.figure`
     margin-bottom: 4vw;
     height: 350px;
   }
+  figcaption{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    line-height: 1.5em;
+    position: relative;
+    top: -2em;
+    background: #191b1f;
+    width: 100%;
+    color: #fff;
+    height: 2em;
+    text-align: center;
+    opacity: 0.95;
+  }
 `;
 
 export const query = graphql`
@@ -470,6 +491,7 @@ export const query = graphql`
         userDate: date(formatString: "D MMMM YYYY")
         date
         tags
+        img_credit
         excerpt
         image {
           childImageSharp {

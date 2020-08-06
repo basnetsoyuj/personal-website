@@ -6,6 +6,7 @@ tags: ['engineering']
 image: ../img/content-writing.png
 date: '2020-07-22T23:46:37.121Z'
 draft: false
+img_credit: ["kit8", "https://dribbble.com/shots/5533277-Screenwriter-typing-on-typewriter?utm_source=Clipboard_Shot&utm_campaign=Frizler&utm_content=Screenwriter%20typing%20on%20typewriter&utm_medium=Social_Share"]
 excerpt: The Content Workflow System to edit and publish tutorials at Programiz uses Google Docs and Python at the backend to convert Google Docs To HTML and vice versa.
 ---
 
