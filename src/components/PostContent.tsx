@@ -27,7 +27,9 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc }) => {
     <PostFullContent className="post-full-content">
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
       <TableOfContents toc={toc} url=""></TableOfContents>
-      <Ast ast={htmlAst} css={AstCss} className="post-content"/>
+      <div css={AstCss}>
+      <Ast ast={htmlAst}/>
+      </div>
     </PostFullContent>
   );
 };
@@ -42,13 +44,14 @@ export const PostFullContent = styled.section`
   font-size: 2rem;
   line-height: 1.6em;
   background: #fff;
-  @media screen and (min-width:1169px) and (max-width:1450px){
-    padding-left: 45px !important;
-  } 
-  @media (max-width: 1170px) {
+
+  @media (max-width: 1230px) {
     padding: 0 11vw;
   }
-  @media (min-width: 1170px) {
+  @media (min-width: 1170px) and (max-width: 1229px) {
+    padding: 0 16.8vw;
+  }
+  @media (min-width: 1169px) {
     // padding: 0 11vw;
     display: flex;
     align-items: flex-start;
@@ -638,7 +641,7 @@ export const PostFullContent = styled.section`
 const AstCss = css`
   display: block;
   min-width: 100%;
-
+  z-index: 50;
   h2::before,
   h3::before,
   h4::before,

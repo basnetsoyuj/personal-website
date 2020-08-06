@@ -11,7 +11,7 @@ excerpt: baghchal is a pure Python Bagh Chal library that supports game import, 
 
 <a href="https://travis-ci.org/basnetsoyuj/baghchal"><img alt="Build Status" src="https://travis-ci.org/basnetsoyuj/baghchal.svg?branch=master" class="no-100-pct"/></a>
 
-### Installation
+<h3 id="installation">Installation</h3>
 baghchal runs on python 3 . You can now install it directly from PyPI via pip:
 
 ```shell
@@ -19,11 +19,12 @@ pip install baghchal
 ```
 System requirements are <a href="https://pypi.org/project/numpy" target="_blank">numpy</a> and <a href="https://pypi.org/project/Pillow/" target="_blank">Pillow</a>.
 
----
-### Source Code
+<hr />
+<h3 id="source-code">Source Code</h3>
 The source code can be found in the <a href="https://github.com/basnetsoyuj/baghchal" target="_blank">GitHub baghchal Repository</a>.
 
-### Documentation
+<hr />
+<h3 id="documentation">Documentation</h3>
 The baghchal package has 3 sub-modules:
 
 - **baghchal.env** (Consists of all classes and functions defining the game environment):
@@ -36,8 +37,10 @@ The baghchal package has 3 sub-modules:
 
 Since a proper documentation is not available as of yet, you have to directly read the source code to figure out the various functions and classes.
 
-### Contribution
+<hr />
+<h3 id="contribution">Contribution</h3>
 If you want to contribute to the library and modify various aspects of the code to make it better, your help is very welcome. You can directly open a pull request at: <a href="https://github.com/basnetsoyuj/baghchal/pulls" target="_blank">baghchal Pull Requests</a>
 
-### License
+<hr />
+<h3 id="license">License</h3>
 baghchal is licensed under <a href="https://github.com/basnetsoyuj/baghchal/blob/master/LICENSE.txt" target="_blank">MIT License</a>.
