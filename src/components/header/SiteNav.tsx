@@ -19,6 +19,7 @@ interface SiteNavProps {
   isPost?: boolean;
   isBlog?: boolean;
   isMain?: boolean;
+  isExplore?: boolean;
   post?: any;
 }
 
@@ -56,7 +57,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     }
   }
 
-  isBottom(el) {
+  isBottom(el: Element) {
     return el.getBoundingClientRect().bottom <= 64;
   }
 
@@ -105,6 +106,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     const {
       isTags = false,
       isBlog = false,
+      isExplore = false,
       isPost = false,
       post = {},
     } = this.props;
@@ -120,6 +122,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               </li>
               <li role="menuitem" className={isTags ? 'nav-current' : ''}>
                 <Link to="/blog/tags">Tags</Link>
+              </li>
+              <li role="menuitem" className={isExplore ? 'nav-current' : ''}>
+                <Link to="/blog/explore">Explore</Link>
               </li>
               <li role="menuitem">
                 <Link to="/about">About</Link>

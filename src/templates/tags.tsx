@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { FluidObject } from 'gatsby-image';
-
+import {css} from '@emotion/core';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -102,7 +102,7 @@ const Tags: React.FC<TagTemplateProps> = props => {
             </div>
           </div>
           <ResponsiveHeaderBackground
-            css={[outer, SiteHeaderBackground]}
+            css={[outer, SiteHeaderBackground, makeDarker]}
             backgroundImage={tagData?.node?.image?.childImageSharp?.fluid?.src}
             className="site-header-background"
           >
@@ -110,13 +110,7 @@ const Tags: React.FC<TagTemplateProps> = props => {
               <SiteTitle className="site-title">#{_.kebabCase(tag)}</SiteTitle>
               <SiteDescription className="site-description">
                 {tagData?.node.description ? (
-                  <div
-                    css={{
-                      backgroundColor: 'rgb(0, 0, 0, 0.35)',
-                      padding: '5px 7px',
-                      marginTop: '8px',
-                    }}
-                  >
+                  <div>
                     {tagData.node.description}
                   </div>
                 ) : (
@@ -145,6 +139,12 @@ const Tags: React.FC<TagTemplateProps> = props => {
     </IndexLayout>
   );
 };
+
+const makeDarker = css`
+:before {
+  background: rgba(0, 0, 0, 0.6);
+}
+`;
 
 export default Tags;
 

@@ -14,9 +14,10 @@ import { PageContext } from '../templates/post';
 export interface PostCardProps {
   post: PageContext;
   large?: boolean;
+  noImage?:boolean;
 }
 
-export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
+export const PostCard: React.FC<PostCardProps> = ({ post, large = false, noImage = false }) => {
   const date = new Date(post.frontmatter.date);
   // 2018-08-20
   const datetime = format(date, 'yyyy-MM-dd');
@@ -30,7 +31,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
       }`}
       css={[PostCardStyles, large && PostCardLarge]}
     >
-      {post.frontmatter.image && (
+      {post.frontmatter.image && !noImage && (
         <Link className="post-card-image-link" css={PostCardImageLink} to={post.fields.slug}>
           <PostCardImage className="post-card-image">
             {post.frontmatter?.image?.childImageSharp?.fluid && (

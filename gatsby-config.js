@@ -66,7 +66,7 @@ module.exports = {
             title: node => node.frontmatter.title,
             excerpt: node => node.frontmatter.excerpt,
             tags: node => node.frontmatter.tags,
-            path: node => node.fields.slug,
+            node: node => node,
           },
         },
         // Optional filter to limit indexed nodes

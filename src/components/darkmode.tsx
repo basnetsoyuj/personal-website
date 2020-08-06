@@ -264,4 +264,18 @@ export const darkTheme = css`
     /* border-top-color: color(var(--darkmode) l(+8%)); */
     border-top-color: ${lighten('0.08', colors.darkmode)};
   }
+
+  // for explore page
+  .search-input {
+    /* border-color: color(var(--darkmode) l(+6%)); */
+    border-color: ${lighten('0.06', colors.darkmode)};
+    color: rgba(255, 255, 255, 0.9);
+    /* background: color(var(--darkmode) l(+3%)); */
+    background: ${lighten('0.03', colors.darkmode)};
+
+    :focus {
+      /* border-color: color(var(--darkmode) l(+25%)); */
+      border-color: ${lighten('0.25', colors.darkmode)};
+    }
+  }
 `;

@@ -10,6 +10,7 @@ import { PostFullContent } from '../../components/PostContent';
 import { Wrapper } from '../../components/Wrapper';
 import IndexLayout from '../../layouts';
 import config from '../../website-config';
+
 import {
   inner,
   outer,
@@ -80,7 +81,7 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">{page_name}</PostFullTitle>
+              <PostFullTitle className="post-full-title">🏷️{page_name}</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">
