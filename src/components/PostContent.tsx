@@ -622,10 +622,10 @@ export const PostFullContent = styled.section`
 
   figcaption{
     text-align:center;
-    text-decoration:underline;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
-    margin-bottom: 1.5em;
-    font-size:0.9em;
+    margin: 1em auto;
+    line-height: 1.5em;
+    font-size:75%;
   }
   /* End Syntax Highlighting */
 `;
