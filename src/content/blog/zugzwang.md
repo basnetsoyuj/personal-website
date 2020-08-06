@@ -32,7 +32,7 @@ Try out the following puzzle and put black in zugzwang. **_Beauty is more apprec
 
 > Look out for non-intuitive and forceful moves.
 
-<iframe id="6928312" allowtransparency="true" frameborder="0" style="width:100%;height:550px;border:none;" src="//www.chess.com/emboard?id=6928312"></iframe>
+<iframe id="6928312" allowtransparency="true" frameborder="0" style="width:100%;height:450px;border:none;" src="//www.chess.com/emboard?id=6928312" class="chessIframe"></iframe>
 
 Complex Zugzwang positions are very rare in professional level chess and are believed to occur once in a lifetime for a player.
 
@@ -56,6 +56,6 @@ Zugzwang is an element of art found in the game of chess. AlphaZero’s refutati
 
 At this point, your brain must be itching to solve some more Zugzwang puzzles. Here’s one more puzzle I will leave at your disposal.
 
-<iframe id="6928316" allowtransparency="true" frameborder="0" style="width:100%;height:550px;border:none;" src="//www.chess.com/emboard?id=6928316"></iframe>
+<iframe id="6928316" allowtransparency="true" frameborder="0" style="width:100%;height:450px;border:none;" src="//www.chess.com/emboard?id=6928316" class="chessIframe"></iframe>
 
 Make sure you zugzwang your way to victory, being devious and merciless whenever you can.

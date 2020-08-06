@@ -21,7 +21,12 @@
   opacity: 0;
   pointer-events: none;
 }
-.site-nav-main.show{
+.site-nav-main.show {
   opacity: 1;
   pointer-events: unset;
+}
+@media screen and (max-width: 1060px) {
+  .chessIframe {
+    height: 550px !important;
+  }
 }
