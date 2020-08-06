@@ -42,6 +42,9 @@ export const PostFullContent = styled.section`
   font-size: 2rem;
   line-height: 1.6em;
   background: #fff;
+  @media screen and (min-width:1169px) and (max-width:1450px){
+    padding-left: 45px !important;
+  } 
   @media (max-width: 1170px) {
     padding: 0 11vw;
   }
