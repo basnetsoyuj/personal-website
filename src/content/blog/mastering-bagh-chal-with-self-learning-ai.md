@@ -3,6 +3,7 @@ layout: post
 title: 'Mastering the Nepali Board Game of Bagh Chal with self-learning AI'
 author: [Soyuj Jung Basnet]
 tags: ['reinforcement learning', 'AI', 'engineering']
+keywords: ['Artificial Intelligence']
 image: ../img/robot.jpg
 date: '2020-07-24T11:46:37.121Z'
 draft: false
@@ -12,7 +13,7 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 <p>People have long dreamed of creating machines that can think and decide for themselves. There have been countless Sci-Fi books and movies that exploit (and sometimes over hype) the term "Artificial Intelligence". This peculiar trait of the human mind — to imagine something well before it comes into existence — has itself led to many inventions and discoveries. Just a decade ago, the research on Artificial Intelligence was limited to only a few candidates pursuing higher degrees in Universities or big companies. The increase in computational power and data availability over the past few years, however, has made it possible for anyone with a decent computer to get started with Machine Learning (ML) and Artificial Intelligence (AI). This blog discusses one such personal project that I started working on almost a year ago. The project tries to use state-of-the-art methods in the deep reinforcement learning paradigm to master the traditional Nepali board game of Bagh Chal through self-play.</p>
 <p>Instead of diving straight into the project, I want to take some time to introduce Artificial Intelligence and some of its relevant concepts. If you would like to skip these upcoming sections, directly refer to the <a href="#baghchal_ai">Bagh Chal AI Project</a> section.</p>
 
-***
+---
 
 <h2 id="renaissance-of-artificial-intelligence">Renaissance of Artificial Intelligence</h2><p>When programmable computers were first created, they rapidly overtook humans in solving problems that could be described by a list of formal mathematical rules, such as crunching numbers. The main obstacle to computers and artificial intelligence proved to be the tasks that are easy for human beings but difficult to formalize as a set of mathematical rules. The tasks such as recognizing spoken words or differentiating objects in images require intuition and do not translate to simple mathematical rules.</p><p>We generally do not give our brain enough credit and are unaware of the extent to which our intuition plays a role in our everyday thinking process. To that, I want to start the blog with a perfect example that Andrej Karpathy gave in his <a target="_blank" href="https://karpathy.github.io/2012/10/22/state-of-computer-vision/">blog</a> back in 2012 that holds to this day.</p>
 
@@ -29,14 +30,14 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 <div class="table-responsive">
 <table>
 <tr>
-<td>x</td>
+<th>x</th>
 <td>0</td>
 <td>2</td>
 <td>3</td>
 <td>4</td>
 </tr>
 <tr>
-<td>y</td>
+<th>y</th>
 <td>0</td>
 <td>4</td>
 <td>9</td>
@@ -53,12 +54,12 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 <div class="table-responsive">
 <table>
 <tr>
-<td>x</td>
+<th>x</th>
 <td>0</td>
 <td>2</td>
 </tr>
 <tr>
-<td>y</td>
+<th>y</th>
 <td>0</td>
 <td>4</td>
 </tr>
@@ -153,7 +154,6 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <p id="baghchal_ai">The examples above are inspired by the ones in the Deep Learning book by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. Visit <a target="_blank" href="https://www.deeplearningbook.org/">Deep Learning Book Website</a> to read a free online version of the book. It is an excellent material to get started with Deep Learning.</p>
 
-
 <hr>
 <h2 id="alpha-baghchal">Project Alpha BaghChal?</h2>
 
@@ -211,7 +211,7 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <ol><li>Placement move: <strong>G&lt;new[row][column]&gt;</strong><br>For example: <strong>G22</strong></li><li>Normal move: <strong>&lt;Piece&gt;&lt;old[row][column]&gt;&lt;new[row][column]&gt;</strong> <br>For example: <strong>B1122</strong></li><li>Capture move: <strong>Bx&lt;old[row][column]&gt;&lt;new[row][column]&gt;</strong><br>For example: <strong>Bx1133</strong></li></ol>
 
-><p><strong>Note:</strong> Both the row and column position use numbers rather than an alphabet and a number like in chess because Bagh Chal has reflection and rotational symmetry, so the numbers can be counted from any direction.</p>
+> <p><strong>Note:</strong> Both the row and column position use numbers rather than an alphabet and a number like in chess because Bagh Chal has reflection and rotational symmetry, so the numbers can be counted from any direction.</p>
 
 <p>At the end of the game, <strong>#</strong> is added along with:</p>
 
@@ -233,11 +233,9 @@ excerpt: Inspired by AlphaZero, this deep reinforcement learning AI agent uses a
 
 <hr><h3 id="prior-work-on-bagh-chal">Prior Work on Bagh Chal</h3><p>Bagh Chal is a relatively simple board game in terms of game tree complexity, compared to other board games like Go, Shogi, or Chess. The Bagh Chal programs found online use search algorithms based on variants of the Minimax algorithm such as <a target="_blank" href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">Alpha-beta pruning</a> to traverse the game tree.</p>
 
-
 <p>Prior works have been done to evaluate the game under optimal play and even exhaustively analyze the endgame phase of the game using retrograde analysis. In their book called Games of No Chance 3, authors Lim Yew Jin and Jurg Nievergelt even prove that <a target="_blank" href="http://library.msri.org/books/Book56/files/22jin.pdf">Tigers and Goats is a draw</a> under optimal play.</p>
 
 <p>My project, on the other hand, is inspired by AlphaZero, a general reinforcement learning agent by <em>Google DeepMind</em>. Instead of creating an agent that uses brute-force methods to play the game, the project takes a different route where the agent learns to improve its performance by continually playing against itself. It uses a single deep residual convolutional neural network which takes in a multilayered binary board state and outputs both the game policy and value, along with Monte Carlo Tree Search.</p>
-
 
 <p>Let's look at what each of these terms means and how they fit into the design of AI architecture.</p>
 
@@ -330,5 +328,5 @@ Even though the agent is not **_Alpha_** by any means, the ultimate joy of being
 
 ---
 
->This blog was posted on the Programiz Blog on July 03, 2020 and can be viewed online at:
-[Mastering the Nepali Board Game of Bagh Chal with self-learning AI](https://www.programiz.com/blog/mastering-bagh-chal-with-self-learning-ai)
+> This blog was posted on the Programiz Blog on July 03, 2020 and can be viewed online at:
+> [Mastering the Nepali Board Game of Bagh Chal with self-learning AI](https://www.programiz.com/blog/mastering-bagh-chal-with-self-learning-ai)
