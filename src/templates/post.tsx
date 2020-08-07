@@ -246,21 +246,23 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
               </PostFullHeader>
 
               {post.frontmatter.image?.childImageSharp && (
-                <PostFullImage>
-                  <Img
-                    style={{ height: '100%' }}
-                    fluid={post.frontmatter.image.childImageSharp.fluid}
-                    alt={post.frontmatter.title}
-                  />
-                  {post.frontmatter.img_credit && (
-                    <figcaption>
-                      Image Credit:{' '}
-                      <a href={post.frontmatter.img_credit[1]} target="_blank">
-                        {post.frontmatter.img_credit[0]}
-                      </a>
-                    </figcaption>
-                  )}
-                </PostFullImage>
+                <div>
+                  <PostFullImage>
+                    <Img
+                      style={{ height: '100%' }}
+                      fluid={post.frontmatter.image.childImageSharp.fluid}
+                      alt={post.frontmatter.title}
+                    />
+                    {post.frontmatter.img_credit && (
+                      <figcaption>
+                        Image Credit:{' '}
+                        <a href={post.frontmatter.img_credit[1]} target="_blank">
+                          {post.frontmatter.img_credit[0]}
+                        </a>
+                      </figcaption>
+                    )}
+                  </PostFullImage>
+                </div>
               )}
               <PostContent
                 htmlAst={post.htmlAst}
@@ -434,6 +436,7 @@ export const PostFullTitle = styled.h1`
 `;
 
 const PostFullImage = styled.figure`
+  position: relative;
   margin: 25px 0 50px;
   height: 800px;
   background: ${colors.lightgrey} center center;
@@ -455,17 +458,18 @@ const PostFullImage = styled.figure`
     margin-bottom: 4vw;
     height: 350px;
   }
-  figcaption{
+  figcaption {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
-    line-height: 1.5em;
-    position: relative;
-    top: -2em;
-    background: #191b1f;
-    width: 100%;
-    color: #fff;
-    height: 2em;
-    text-align: center;
-    opacity: 0.95;
+    display: inline-block;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgb(14, 30, 37);
+    color: rgb(255, 255, 255);
+    padding: 2px 6px;
+    font-weight: 400;
+    letter-spacing: 0.03rem;
   }
 `;
 

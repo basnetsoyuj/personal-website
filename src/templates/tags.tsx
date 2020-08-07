@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { FluidObject } from 'gatsby-image';
-import {css} from '@emotion/core';
+import { css } from '@emotion/core';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -40,6 +40,7 @@ interface TagTemplateProps {
         node: {
           id: string;
           description: string;
+          url?: String[];
           image?: {
             childImageSharp: {
               fluid: FluidObject;
@@ -111,7 +112,17 @@ const Tags: React.FC<TagTemplateProps> = props => {
               <SiteDescription className="site-description">
                 {tagData?.node.description ? (
                   <div>
-                    {tagData.node.description}
+                    {tagData.node.description}{' '}
+                    {tagData?.node.url ? (
+                      <>
+                        {tagData?.node.url[0]}
+                        <a href={tagData?.node.url[2]} target="_blank">
+                          {tagData?.node.url[1]}
+                        </a>{tagData?.node.url[3]}
+                      </>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 ) : (
                   <></>
@@ -141,9 +152,9 @@ const Tags: React.FC<TagTemplateProps> = props => {
 };
 
 const makeDarker = css`
-:before {
-  background: rgba(0, 0, 0, 0.6);
-}
+  :before {
+    background: rgba(0, 0, 0, 0.6);
+  }
 `;
 
 export default Tags;
@@ -155,6 +166,7 @@ export const pageQuery = graphql`
         node {
           id
           description
+          url
           image {
             childImageSharp {
               fluid(maxWidth: 3720) {
