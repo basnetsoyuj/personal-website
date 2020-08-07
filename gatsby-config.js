@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [ ],
+        exclude: [],
       },
     },
     {
@@ -71,7 +71,7 @@ module.exports = {
           },
         },
         // Optional filter to limit indexed nodes
-        filter: (node, getNode) => node.frontmatter.tags !== "exempt",
+        filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
       },
     },
     {

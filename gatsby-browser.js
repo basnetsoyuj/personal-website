@@ -1,5 +1,4 @@
 import './src/styles/global.css';
-
 import React from "react"
 import PropTypes from 'prop-types'
 import { ThemeProvider } from "./src/context/ThemeContext"
