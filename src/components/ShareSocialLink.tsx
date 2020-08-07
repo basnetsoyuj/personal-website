@@ -71,7 +71,7 @@ const ShareItem = styled.div`
 const ShareLink = styled.a`
   margin: 0;
   opacity: 0.8;
-  margin: 0 10px;
+  margin: 0 7px;
   :hover {
     opacity: 1;
   }

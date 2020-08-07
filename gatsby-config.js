@@ -233,5 +233,16 @@ module.exports = {
         siteSpeedSampleRate: 10,
       },
     },
+    {
+      resolve: 'gatsby-plugin-page-progress',
+      options: {
+        includePaths: [{ regex: '^/blog/' }],
+        excludePaths: ["/blog/",{ regex: '^/blog/tags' }, '/blog/explore', { regex: '^/blog/author' }],
+        height: 3,
+        prependToBody: false,
+        color: `#663399`,
+        footerHeight: 500,
+      },
+    },
   ],
 };
