@@ -3,9 +3,44 @@ import { css } from '@emotion/core';
 import { lighten } from 'polished';
 
 export const darkTheme = css`
+  .site-nav-logo {
+    color: #fff;
+  }
+  .mainSiteNavMain {
+    background: #000;
+  }
+  .mainNavUl li a {
+    color: #fff !important;
+  }
+  .mainNavUl li a:before {
+    color: #fff !important;
+  }
+
+  .svgNav {
+    svg {
+      fill: #fff;
+    }
+  }
+  .mainSiteFooter {
+    color: #fff;
+    background: #000;
+
+    div {
+      color: rgba(255, 255, 255, 0.7);
+      a {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      a:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
   /* layouts/index.tsx */
   color: rgba(255, 255, 255, 0.75);
-  background: ${colors.darkmode} !important;
+  // background: ${colors.darkmode} !important;
+  background: #000 !important;
+
 
   img {
     opacity: 0.9;
@@ -206,6 +241,7 @@ export const darkTheme = css`
     :before {
       background: rgba(0, 0, 0, 0.6);
     }
+    background: #000;
   }
 
   .author-image {
@@ -228,6 +264,9 @@ export const darkTheme = css`
     .author-social-link a {
       color: rgba(255, 255, 255, 0.75);
     }
+  }
+  .site-title{
+    color: #fff;
   }
 
   .author-card {
@@ -276,43 +315,6 @@ export const darkTheme = css`
     :focus {
       /* border-color: color(var(--darkmode) l(+25%)); */
       border-color: ${lighten('0.25', colors.darkmode)};
-    }
-  }
-
-
-  .mainSiteNavMain {
-    background: #000;
-  }
-  .mainNav{
-    .site-nav-logo {
-      color: #fff;
-    }
-    .mainNavUl li a {
-      color: #fff !important;
-    }
-    .mainNavUl li a:before {
-      color: #fff !important;
-    }
-  
-    .svgNav {
-      svg {
-        fill: #fff;
-      }
-    }
-  }
-
-  .mainSiteFooter {
-    color: #fff;
-    background: #000;
-
-    div {
-      color: rgba(255, 255, 255, 0.7);
-      a {
-        color: rgba(255, 255, 255, 0.7);
-      }
-      a:hover {
-        color: rgba(255, 255, 255, 1);
-      }
     }
   }
 `;

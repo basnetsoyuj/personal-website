@@ -373,10 +373,11 @@ export const PostFullContent = styled.section`
     border: 0;
     /* color: var(--blue); */
     color: ${colors.midgrey};
-    font-family: Euclid, 'Century Gothic';
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 3.2rem;
     line-height: 1.35em;
-    text-align: center;
+    // text-align: center;
   }
   @media (min-width: 1180px) {
     h5 {
@@ -387,7 +388,7 @@ export const PostFullContent = styled.section`
   @media (max-width: 800px) {
     h5 {
       margin-bottom: 1em;
-      margin-left: 1.3em;
+      // margin-left: 1.3em;
       padding: 0 0 0.5em;
       font-size: 2.4rem;
       text-align: initial;
@@ -630,7 +631,7 @@ export const PostFullContent = styled.section`
 
   figcaption{
     text-align:center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    font-family: minerva-modern, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
     margin: 1em auto;
     line-height: 1.5em;
     font-size:75%;

@@ -18,7 +18,7 @@ const SiteNavLogoStyles = css`
   display: inline-block;
   margin-right: 32px;
   padding: 12px 0;
-  color: #fff;
+  color: #000;
   font-size: 1.7rem;
   line-height: 1.8rem;
   font-weight: bold;
@@ -44,6 +44,10 @@ const SiteNavLogoStyles = css`
     span {
       font-weight: 700;
       // color: rgb(14, 30, 37);
+    }
+
+    @media(max-width:600px){
+      font-size:20px;
     }
   }
 `;

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/core';
 
-import { Footer } from '../components/Footer';
+import { Footer } from '../components/mainFooter';
 import SiteNav from '../components/main_header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
@@ -16,7 +16,7 @@ import {
   SiteHeader,
   SiteMain,
   SiteNavMain,
-} from '../styles/shared';
+} from '../styles/mainShared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 
 const PageTemplate = css`
@@ -45,7 +45,7 @@ const Contact: React.FC = () => (
     </Helmet>
     <Wrapper css={PageTemplate}>
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
-        <div css={[outer, SiteNavMain]}>
+        <div css={[outer, SiteNavMain]} className="mainSiteNavMain">
           <div css={inner}>
             <SiteNav isContact={true} />
           </div>

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -6,10 +6,12 @@ import { Helmet } from 'react-helmet';
 import { css } from '@emotion/core';
 
 import { Footer } from '../components/mainFooter';
+import { SiteNavMain } from '../components/main_header/SiteNav';
 import SiteNav from '../components/main_header/SiteNav';
+
 import { Wrapper } from '../components/Wrapper';
 
-import IndexLayout from '../layouts';
+import MainIndexLayout from '../layouts/mainIndex';
 import {
   inner,
   outer,
@@ -19,7 +21,7 @@ import {
   SiteMain,
   SiteTitle,
   SiteHeaderStyles,
-} from '../styles/shared';
+} from '../styles/mainShared';
 
 import config from '../website-config';
 
@@ -29,8 +31,8 @@ export interface IndexProps {
       childImageSharp: {
         fixed: FixedObject;
       };
+    };
   };
-}
 }
 const pageTitle = config.title;
 const pageUrl = config.siteUrl;
@@ -38,7 +40,7 @@ const pageUrl = config.siteUrl;
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.ogImage.childImageSharp.fixed;
   return (
-    <IndexLayout css={HomePosts}>
+    <MainIndexLayout>
       <Helmet>
         <html lang={config.lang} />
         <title>{pageTitle}</title>
@@ -74,34 +76,31 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
       <Wrapper>
-        <div
-          css={[outer, SiteHeader, SiteHeaderStyles]}
-          className="site-header-background"
-        >
+        <div css={[outer, SiteHeader]} className="mainSiteNavMain">
           <div css={inner}>
-            <SiteNav isHome />
+            <SiteNav />
+          </div>
+        </div>
+        <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background">
+          <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title" css={{textAlign:"center"}}>
-                    Site Under Construction 🚧
+              <SiteTitle className="site-title">
+                Just another human training artificial neural networks.
               </SiteTitle>
-              <SiteDescription css={{textAlign:"center"}}>Meanwhile, you can check out some of my blog posts.</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
-        <div css={inner}>
-
-        </div>
+          <div css={inner}></div>
         </main>
-
         <Footer />
       </Wrapper>
-    </IndexLayout>
+    </MainIndexLayout>
   );
 };
 
 export const pageQuery = graphql`
-  query IndexPageQuery{
+  query IndexPageQuery {
     ogImage: file(relativePath: { eq: "img/main-og-image.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -110,64 +109,6 @@ export const pageQuery = graphql`
           ...GatsbyImageSharpFixed
         }
       }
-    }
-  }
-`;
-
-const HomePosts = css`
-  @media (min-width: 795px) {
-    .post-card-large {
-      flex: 1 1 100%;
-      flex-direction: row;
-      padding-bottom: 40px;
-      min-height: 280px;
-      border-top: 0;
-    }
-
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-large:not(.no-image) .post-card-header {
-      margin-top: 0;
-    }
-
-    .post-card-large .post-card-image-link {
-      position: relative;
-      flex: 1 1 auto;
-      margin-bottom: 0;
-      min-height: 380px;
-    }
-
-    .post-card-large .post-card-image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .post-card-large .post-card-content {
-      flex: 0 1 361px;
-      justify-content: center;
-    }
-
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-large .post-card-content-link {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-meta {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-excerpt p {
-      margin-bottom: 1.5em;
-      font-size: 1.8rem;
-      line-height: 1.5em;
     }
   }
 `;

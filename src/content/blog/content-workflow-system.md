@@ -74,11 +74,16 @@ var table = element.insertTable(index, cells);
 
 
 <p>If instead, we were to use other programming languages, we would have to send the following JSON request to the Google Docs API. For efficiency, the Document is written backward so that the text's length in each cell doesn’t affect the indices of the subsequent elements.</p>
-<pre>[{'insertTable': {'rows': 2, 'columns': 2, 'location': {'index': 2}}},
-{'insertText': {'location': {'index': 13}, 'text': 'CELL22'}},
-{'insertText': {'location': {'index': 11}, 'text': 'CELL21'}},
-{'insertText': {'location': {'index': 8}, 'text': 'CELL12'}},
-{'insertText': {'location': {'index': 6}, 'text': 'CELL11'}}]</pre>
+
+```javascript
+[
+  { insertTable: { rows: 2, columns: 2, location: { index: 2 } } },
+  { insertText: { location: { index: 13 }, text: "CELL22" } },
+  { insertText: { location: { index: 11 }, text: "CELL21" } },
+  { insertText: { location: { index: 8 }, text: "CELL12" } },
+  { insertText: { location: { index: 6 }, text: "CELL11" } },
+];
+```
 
 <p>Here, the index of any cell is given by the formula:</p>
 <pre>4 + TABLE_INDEX + (1+ NO_OF_COLUMNS * 2)* CURRENT_ROW + 2 * CURRENT_COLUMN</pre>

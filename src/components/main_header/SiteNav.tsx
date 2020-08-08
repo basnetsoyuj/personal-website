@@ -6,92 +6,28 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
+import { SocialLink, SocialLinkFb } from '../../styles/mainShared';
 import config from '../../website-config';
 import { Facebook } from '../icons/facebook';
 import { Twitter } from '../icons/twitter';
-import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 import DarkModeToggle from '../DarkModeToggle';
 
 interface SiteNavProps {
   isHome?: boolean;
   isContact?: boolean;
-  isPost?: boolean;
   isAbout?: boolean;
-
-
-  post?: any;
 }
-
-interface SiteNavState {
-  showTitle: boolean;
-}
-
-class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
-  subscribe = React.createRef<SubscribeModal>();
-  titleRef = React.createRef<HTMLSpanElement>();
-  lastScrollY = 0;
-  ticking = false;
-  state = { showTitle: false };
-
-  openModal = () => {
-    if (this.subscribe.current) {
-      this.subscribe.current.open();
-    }
-  };
-
-  componentDidMount(): void {
-    this.lastScrollY = window.scrollY;
-    if (this.props.isPost) {
-      window.addEventListener('scroll', this.onScroll, { passive: true });
-    }
-  }
-
-  componentWillUnmount(): void {
-    window.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll = () => {
-    if (!this.titleRef || !this.titleRef.current) {
-      return;
-    }
-
-    if (!this.ticking) {
-      requestAnimationFrame(this.update);
-    }
-
-    this.ticking = true;
-  };
-
-  update = () => {
-    if (!this.titleRef || !this.titleRef.current) {
-      return;
-    }
-
-    this.lastScrollY = window.scrollY;
-
-    const trigger = this.titleRef.current.getBoundingClientRect().top;
-    const triggerOffset = this.titleRef.current.offsetHeight + 35;
-
-    // show/hide post title
-    if (this.lastScrollY >= trigger + triggerOffset) {
-      this.setState({ showTitle: true });
-    } else {
-      this.setState({ showTitle: false });
-    }
-
-    this.ticking = false;
-  };
+class SiteNav extends React.Component<SiteNavProps> {
 
   render(): JSX.Element {
-    const { isContact=false, isAbout = false, isPost = false, post = {} } = this.props;
+    const { isContact=false, isAbout = false} = this.props;
     return (
-      <nav css={SiteNavStyles}>
+      <nav css={SiteNavStyles} className="mainNav">
         <SiteNavLeft className="site-nav-left">
           <SiteNavLogo />
-          <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
-            <ul css={NavStyles} role="menu">
+          <SiteNavContent>
+            <ul css={NavStyles} role="menu" className="mainNavUl">
               {/* TODO: mark current nav item - add class nav-current */}
               <li role="menuitem">
                 <Link to="/blog">Blog</Link>
@@ -103,19 +39,14 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
-            {isPost && (
-              <NavPostTitle ref={this.titleRef} className="nav-post-title">
-                {post.title}
-              </NavPostTitle>
-            )}
           </SiteNavContent>
         </SiteNavLeft>
-        <DarkModeSiteNavRight>
-          <div css={darkmodeButton}>
+        <DarkModeSiteNavRight className="svgNav">
+          <div css={darkmodeButton} className="darkModeBtn">
             <DarkModeToggle />
           </div>
         </DarkModeSiteNavRight>
-        <SiteNavRight>
+        <SiteNavRight className="svgNav">
           <SocialLinks>
             {config.facebook && (
               <a
@@ -137,11 +68,11 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter />
+                <Twitter/>
               </a>
             )}
           </SocialLinks>
-          <div css={darkmodeButton}>
+          <div css={darkmodeButton} className="svgNav">
             <DarkModeToggle />
           </div>
         </SiteNavRight>
@@ -149,21 +80,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     );
   }
 }
-
-export const SiteNavMain = css`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  /* background: color(var(--darkgrey) l(-5%)) */
-  background: ${darken('0.05', colors.darkgrey)};
-
-  @media (max-width: 700px) {
-    padding-right: 0;
-    padding-left: 0;
-  }
-`;
 
 const SiteNavStyles = css`
   position: relative;
@@ -222,7 +138,7 @@ const NavStyles = css`
     position: relative;
     display: block;
     padding: 12px 12px;
-    color: #fff;
+    color: #000 !important;
     opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
   }
@@ -239,7 +155,7 @@ const NavStyles = css`
     bottom: 8px;
     left: 12px;
     height: 1px;
-    background: #fff;
+    background: #000;
     opacity: 0.25;
     transition: all 0.35s ease-in-out;
   }
@@ -257,7 +173,7 @@ const NavStyles = css`
 const darkmodeButton = css`
   position: relative;
   display: block;
-  fill: #fff;
+  fill: #000;
   opacity: 0.8;
   transition: opacity 0.35s ease-in-out;
   :hover {
@@ -297,40 +213,4 @@ const SocialLinks = styled.div`
   display: flex;
   align-items: center;
 `;
-
-const NavPostTitle = styled.span`
-  visibility: hidden;
-  position: absolute;
-  top: 9px;
-  color: #fff;
-  font-size: 1.7rem;
-  font-weight: 400;
-  text-transform: none;
-  opacity: 0;
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-  transform: translateY(175%);
-
-  .dash {
-    left: -25px;
-  }
-
-  .dash:before {
-    content: '– ';
-    opacity: 0.5;
-  }
-`;
-
-const HideNav = css`
-  ul {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-175%);
-  }
-  .nav-post-title {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 export default SiteNav;

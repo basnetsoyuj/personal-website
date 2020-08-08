@@ -214,7 +214,9 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                       </div>
                     ))}
                 </PostFullTags>
-                <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
+                <PostFullTitle className="post-full-title">
+                  {post.frontmatter.title}
+                </PostFullTitle>
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
                 </PostFullCustomExcerpt>
@@ -460,7 +462,8 @@ const PostFullImage = styled.figure`
   }
   figcaption {
     font-style: italic;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    font-family: minerva-modern, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell;
     display: inline-block;
     font-size: 1.2rem;
     position: absolute;

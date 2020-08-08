@@ -5,6 +5,12 @@
   src: url('../../static/fonts/EuclidCircularA-Regular.woff2') format('woff2');
   font-display: swap;
 }
+@font-face {
+  font-family: minerva-modern;
+  src: url('../../static/fonts/minerva-modern.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 .clearFix {
   clear: both;
 }
@@ -35,4 +41,24 @@
   display: block;
   min-width: 100%;
   z-index: 50;
+}
+
+.post-full-title {
+  font-family: 'minerva-modern';
+}
+
+.mainSiteNavMain {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+@media (max-width: 700px) {
+  .mainSiteNavMain {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
