@@ -81,7 +81,7 @@ const Tags: React.FC<TagTemplateProps> = (props) => {
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">🏷️{page_name}</PostFullTitle>
+              <PostFullTitle className="post-full-title">{page_name} 🏷️</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">

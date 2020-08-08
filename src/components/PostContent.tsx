@@ -631,7 +631,7 @@ export const PostFullContent = styled.section`
 
   figcaption{
     text-align:center;
-    font-family: minerva-modern, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
     margin: 1em auto;
     line-height: 1.5em;
     font-size:75%;

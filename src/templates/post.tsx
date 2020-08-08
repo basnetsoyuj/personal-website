@@ -462,7 +462,7 @@ const PostFullImage = styled.figure`
   }
   figcaption {
     font-style: italic;
-    font-family: minerva-modern, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell;
     display: inline-block;
     font-size: 1.2rem;

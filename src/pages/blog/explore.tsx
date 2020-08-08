@@ -60,7 +60,7 @@ const Explore: React.FC = () => {
           </div>
           <div css={outer}>
             <SiteHeaderContent css={[inner, forSmall]} className="site-header-content">
-              <SiteTitle className="site-title post-full-title">🧭{page_name}</SiteTitle>
+              <SiteTitle className="site-title post-full-title">{page_name} 🧭</SiteTitle>
               <SiteDescription className="site-description">{page_desc}</SiteDescription>
             </SiteHeaderContent>
           </div>
