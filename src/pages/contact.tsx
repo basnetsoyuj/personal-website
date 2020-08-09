@@ -13,6 +13,7 @@ import {
   inner,
   outer,
   SiteArchiveHeader,
+  SiteDescription,
   SiteHeader,
   SiteMain,
   SiteNavMain,
@@ -55,18 +56,19 @@ const Contact: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">Contact</PostFullTitle>
+              <PostFullTitle className="post-full-title">Get in touch with me</PostFullTitle>
+              <SiteDescription>
+              I would love to hear from you. Don’t be a stranger, just say hello! Feel free to drop any feedback, suggestions, or questions. 
+              I am always open to discussing new projects, creative ideas, and opportunities. 
+              </SiteDescription>
+
+              <SiteDescription>
+              If you want to report bugs, typos, grammatical errors, or any other types of inaccuracies in the blog, please open an issue <a href="https://github.com/basnetsoyuj/personal-website/issues/new" target="_blank">here</a>.
+              </SiteDescription>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">
-              <div className="post-content">
-                <h5>Questions / Feedback</h5>
-                <p>
-                  If you are interested in my work, have a question, or want to leave a feedback, please feel free to contact me via <a href="mailto:bsoyuj@gmail.com">mail</a>. I am also available on <a href="https://twitter.com/basnetsoyuj" target="_blank">Twitter</a>.
-                </p>
-                <h5>Report Issues</h5>
-                <p>If you want to report typos, grammatical errors, or any other types of inaccuracies in the blog, please open an issue <a href="https://github.com/basnetsoyuj/personal-website/issues/new" target="_blank">here</a>. Your help will prove invaluable to make this blog more reliable and accurate.</p>
-              </div>
+
             </PostFullContent>
           </article>
         </div>
