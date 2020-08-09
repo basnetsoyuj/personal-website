@@ -15,7 +15,9 @@ export const darkTheme = css`
   .mainNavUl li a:before {
     color: #fff !important;
   }
-
+  .site-description{
+    color: #fff;
+  }
   .svgNav {
     svg {
       fill: #fff;

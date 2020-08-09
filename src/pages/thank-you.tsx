@@ -1,5 +1,5 @@
-import { Link, graphql } from 'gatsby';
-import { FixedObject } from 'gatsby-image';
+import { Link } from 'gatsby';
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -13,6 +13,7 @@ import {
   inner,
   outer,
   SiteHeader,
+  SiteDescription,
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
@@ -21,20 +22,10 @@ import {
 
 import config from '../website-config';
 
-export interface IndexProps {
-  data: {
-    ogImage: {
-      childImageSharp: {
-        fixed: FixedObject;
-      };
-    };
-  };
-}
 const pageTitle = config.title;
 const pageUrl = config.siteUrl;
 
-const IndexPage: React.FC<IndexProps> = props => {
-  const { width, height } = props.data.ogImage.childImageSharp.fixed;
+const ThankYouPage: React.FC = () => {
   return (
     <MainIndexLayout>
       <Helmet>
@@ -46,10 +37,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={config.mainDescription} />
         <meta property="og:url" content={pageUrl} />
-        <meta
-          property="og:image"
-          content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
-        />
+
         {config.facebook && <meta property="article:publisher" content={config.facebook} />}
         {config.googleSiteVerification && (
           <meta name="google-site-verification" content={config.googleSiteVerification} />
@@ -58,18 +46,12 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={config.description} />
         <meta name="twitter:url" content={pageUrl} />
-        <meta
-          name="twitter:image"
-          content={`${config.siteUrl}${props.data.ogImage.childImageSharp.fixed.src}`}
-        />
         {config.twitter && (
           <meta
             name="twitter:site"
             content={`@${config.twitter.split('https://twitter.com/')[1]}`}
           />
         )}
-        <meta property="og:image:width" content={width.toString()} />
-        <meta property="og:image:height" content={height.toString()} />
       </Helmet>
       <Wrapper>
         <div css={[outer, SiteHeader]} className="mainSiteNavMain">
@@ -80,9 +62,18 @@ const IndexPage: React.FC<IndexProps> = props => {
         <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background">
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title">
-                Just another human training artificial neural networks.
-              </SiteTitle>
+              <SiteTitle className="site-title">Thank you!</SiteTitle>
+              <SiteDescription className="site-description">
+                I will get back to you as soon as possible.
+              </SiteDescription>
+              <SiteDescription className="site-description">
+                Meanwhile, you can checkout some of my recent blog posts.
+              </SiteDescription>
+              <SiteDescription>
+                <Link css={{ marginTop: '5px' }} to="/blog">
+                  Go to the Blog Home Page →
+                </Link>
+                </SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
@@ -95,18 +86,4 @@ const IndexPage: React.FC<IndexProps> = props => {
   );
 };
 
-export const pageQuery = graphql`
-  query IndexPageQuery {
-    ogImage: file(relativePath: { eq: "img/main-og-image.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 2000, quality: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`;
-
-export default IndexPage;
+export default ThankYouPage;

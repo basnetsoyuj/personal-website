@@ -61,6 +61,7 @@ export const SiteDescription = styled.h2`
   @media (max-width: 500px) {
     font-size: 1.8rem;
   }
+  color: #000;
 `;
 
 export const Posts = css`

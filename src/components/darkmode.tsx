@@ -266,7 +266,7 @@ export const darkTheme = css`
   }
 
   // for explore page
-  .search-input {
+  .search-input, #contact-message {
     /* border-color: color(var(--darkmode) l(+6%)); */
     border-color: ${lighten('0.06', colors.darkmode)};
     color: rgba(255, 255, 255, 0.9);
@@ -315,4 +315,6 @@ export const darkTheme = css`
       }
     }
   }
+
+
 `;

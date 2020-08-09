@@ -82,7 +82,7 @@ const SubscribeEmail = styled.input`
   }
 `;
 
-const SubscribeFormButton = styled.button`
+export const SubscribeFormButton = styled.button`
   position: relative;
   display: inline-block;
   margin: 0 0 0 10px;
