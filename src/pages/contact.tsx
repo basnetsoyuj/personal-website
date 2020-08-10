@@ -6,6 +6,12 @@ import { Footer } from '../components/mainFooter';
 import SiteNav from '../components/main_header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
+import { Twitter } from '../components/icons/twitter';
+import { Facebook } from '../components/icons/facebook';
+import { LinkedIn } from '../components/icons/linkedin';
+import { Instagram } from '../components/icons/instagram';
+import { Mail } from '../components/icons/mail';
+
 import IndexLayout from '../layouts';
 import config from '../website-config';
 import {
@@ -16,7 +22,7 @@ import {
   SiteMain,
   SiteNavMain,
 } from '../styles/mainShared';
-import {  SiteDescription} from '../styles/shared';
+import { SiteDescription } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import ContactForm from '../components/ContactForm';
 
@@ -58,7 +64,26 @@ const Contact: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">Get in touch with me</PostFullTitle>
+              <PostFullTitle className="post-full-title" css={specialHeader}>Get in touch with me</PostFullTitle>
+              <SiteDescription>
+                <div className="contactSocialLink" css={ContactSocialLink}>
+                  <a href={config.facebook} target="_blank" className="facebook-svg">
+                    <Facebook css={{ marginLeft: 0 }} />
+                  </a>
+                  <a href={config.linkedin} target="_blank">
+                    <LinkedIn />
+                  </a>
+                  <a href={config.twitter} target="_blank">
+                    <Twitter />
+                  </a>
+                  <a href={config.instagram} target="_blank">
+                    <Instagram />
+                  </a>
+                  <a href={'mailto:' + config.email} target="_blank" className="mail-svg">
+                    <Mail />
+                  </a>
+                </div>
+              </SiteDescription>
               <SiteDescription>
                 I would love to hear from you. Don’t be a stranger, just say hello! Feel free to
                 drop any feedback, suggestions, or questions. I am always open to discussing new
@@ -76,7 +101,7 @@ const Contact: React.FC = () => (
                 .
               </SiteDescription>
             </PostFullHeader>
-            
+
             <PostFullContent className="post-full-content">
               <ContactForm />
             </PostFullContent>
@@ -88,4 +113,36 @@ const Contact: React.FC = () => (
   </IndexLayout>
 );
 
+const ContactSocialLink = css`
+  align-items: center;
+  display: flex;
+  a {
+    margin: 2rem;
+  }
+  svg {
+    fill: #000;
+    height: 3rem;
+  }
+  .facebook-svg {
+    margin-left: 0;
+  }
+  .mail-svg {
+    margin-right: 0;
+  }
+  @media(max-width:350px){
+    a{
+      margin: 1.5rem;
+      svg{
+        height: 2rem;
+      }
+    }
+  }
+`;
+
+const specialHeader = css`
+font-family: minerva-modern;
+@media (max-width:605px){
+  font-size:4.5rem;
+}
+`;
 export default Contact;

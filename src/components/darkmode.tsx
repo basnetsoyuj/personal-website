@@ -316,5 +316,9 @@ export const darkTheme = css`
     }
   }
 
-
+  .contactSocialLink{
+    svg{
+      fill: #fff;
+    }
+  }
 `;

@@ -63,10 +63,10 @@ const ThankYouPage: React.FC = () => {
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">Thank you!</SiteTitle>
-              <SiteDescription className="site-description">
+              <SiteDescription className="site-description" css={{textAlign:"center"}}>
                 I will get back to you as soon as possible.
               </SiteDescription>
-              <SiteDescription className="site-description">
+              <SiteDescription className="site-description" css={{textAlign:"center"}}>
                 Meanwhile, you can checkout some of my recent blog posts.
               </SiteDescription>
               <SiteDescription>

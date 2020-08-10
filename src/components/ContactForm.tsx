@@ -117,7 +117,7 @@ const inputCss = css`
   border: ${lighten('0.07', colors.lightgrey)} 1px solid;
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 1em;
   font-weight: normal;
   user-select: text;
@@ -149,7 +149,7 @@ const name = css`
     padding: unset;
     width: 100%;
   }
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 const email = css`
@@ -160,7 +160,7 @@ const email = css`
     padding: unset;
     width: 100%;
   }
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 const formCss = css`
@@ -173,7 +173,7 @@ const formCss = css`
 `;
 
 const reasonCss = css`
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   select {
     line-height: 1.2em;
   }
@@ -187,7 +187,7 @@ const messageCss = css`
   border: ${lighten('0.07', colors.lightgrey)} 1px solid;
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: normal;
   user-select: text;
   border-radius: 5px;
@@ -201,5 +201,5 @@ const messageCss = css`
     border-color: ${lighten('-0.02', colors.lightgrey)};
   }
 
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
