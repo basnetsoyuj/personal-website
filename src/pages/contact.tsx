@@ -64,7 +64,9 @@ const Contact: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title" css={specialHeader}>Get in touch with me</PostFullTitle>
+              <PostFullTitle className="post-full-title" css={specialHeader}>
+                Get in touch with me
+              </PostFullTitle>
               <SiteDescription>
                 <div className="contactSocialLink" css={ContactSocialLink}>
                   <a href={config.facebook} target="_blank" className="facebook-svg">
@@ -114,7 +116,7 @@ const Contact: React.FC = () => (
 );
 
 const ContactSocialLink = css`
-  align-items: center;
+
   display: flex;
   a {
     margin: 2rem;
@@ -129,10 +131,10 @@ const ContactSocialLink = css`
   .mail-svg {
     margin-right: 0;
   }
-  @media(max-width:350px){
-    a{
+  @media (max-width: 350px) {
+    a {
       margin: 1.5rem;
-      svg{
+      svg {
         height: 2rem;
       }
     }
@@ -140,9 +142,13 @@ const ContactSocialLink = css`
 `;
 
 const specialHeader = css`
-font-family: minerva-modern;
-@media (max-width:605px){
-  font-size:4.5rem;
-}
+  font-family: minerva-modern;
+  @media (max-width: 605px) {
+    font-size: 4.5rem;
+  }
+  @media (max-width: 440px) {
+    font-size: 3.75rem;
+    text-align: center;
+  }
 `;
 export default Contact;
