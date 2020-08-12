@@ -116,7 +116,6 @@ const Contact: React.FC = () => (
 );
 
 const ContactSocialLink = css`
-
   display: flex;
   a {
     margin: 2rem;

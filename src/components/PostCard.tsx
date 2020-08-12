@@ -14,7 +14,7 @@ import { PageContext } from '../templates/post';
 export interface PostCardProps {
   post: PageContext;
   large?: boolean;
-  noImage?:boolean;
+  noImage?: boolean;
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ post, large = false, noImage = false }) => {
@@ -49,7 +49,9 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false, noImage
           <PostCardHeader className="post-card-header">
             {post.frontmatter.tags && (
               <PostCardPrimaryTag className="post-card-primary-tag">
-                <Link to={`/blog/tags/${_.kebabCase(post.frontmatter.tags[0])}`}>{post.frontmatter.tags[0]}</Link>
+                <Link to={`/blog/tags/${_.kebabCase(post.frontmatter.tags[0])}`}>
+                  {post.frontmatter.tags[0]}
+                </Link>
               </PostCardPrimaryTag>
             )}
             <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>

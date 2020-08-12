@@ -266,7 +266,8 @@ export const darkTheme = css`
   }
 
   // for explore page
-  .search-input, #contact-message {
+  .search-input,
+  #contact-message {
     /* border-color: color(var(--darkmode) l(+6%)); */
     border-color: ${lighten('0.06', colors.darkmode)};
     color: rgba(255, 255, 255, 0.9);
@@ -279,11 +280,10 @@ export const darkTheme = css`
     }
   }
 
-
   .mainSiteNavMain {
     background: #000;
   }
-  .mainNav{
+  .mainNav {
     .site-nav-logo {
       color: #fff;
     }
@@ -293,7 +293,7 @@ export const darkTheme = css`
     .mainNavUl li a:before {
       color: #fff !important;
     }
-  
+
     .svgNav {
       svg {
         fill: #fff;
@@ -316,8 +316,8 @@ export const darkTheme = css`
     }
   }
 
-  .contactSocialLink{
-    svg{
+  .contactSocialLink {
+    svg {
       fill: #fff;
     }
   }

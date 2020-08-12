@@ -2,7 +2,7 @@ import { lighten } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
-import {css} from '@emotion/core';
+import { css } from '@emotion/core';
 import { colors } from '../styles/colors';
 import TableOfContents from './TableOfContents';
 
@@ -28,7 +28,7 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc }) => {
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
       <TableOfContents toc={toc} url=""></TableOfContents>
       <div css={AstCss}>
-      <Ast ast={htmlAst}/>
+        <Ast ast={htmlAst} />
       </div>
     </PostFullContent>
   );
@@ -649,7 +649,7 @@ const AstCss = css`
   h5::before,
   h6::before {
     display: block;
-    content: " ";
+    content: ' ';
     height: 80px;
     margin-top: -80px;
     visibility: hidden;

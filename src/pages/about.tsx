@@ -26,22 +26,23 @@ const PageTemplate = css`
     background: #fff;
   }
 `;
-const page_name = "About";
-const page_desc = "Hey! I am Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and Physics. I want to explore how and why things work the way they do. This website was created to help me do exactly that. By penning down my thoughts, experiences, and point of view on various technical and non-technical areas, I wish to understand things better, explain them clearly, and ultimately be a better problem solver.";
+const page_name = 'About';
+const page_desc =
+  "Hey! I am Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and Physics. I want to explore how and why things work the way they do. This website was created to help me do exactly that. By penning down my thoughts, experiences, and point of view on various technical and non-technical areas, I wish to understand things better, explain them clearly, and ultimately be a better problem solver.";
 const About: React.FC = () => (
   <IndexLayout>
     <Helmet>
-    <title>{`${page_name} | ${config.title}`}</title>
+      <title>{`${page_name} | ${config.title}`}</title>
       <meta name="description" content={page_desc} />
       <meta property="og:site_name" content={config.title} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={`${page_name} | ${config.title}`} />
       <meta property="og:description" content={page_desc} />
-      <meta property="og:url" content={config.siteUrl+'/'+page_name.toLowerCase()} />
+      <meta property="og:url" content={config.siteUrl + '/' + page_name.toLowerCase()} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={`${page_name} | ${config.title}`} />
       <meta name="twitter:description" content={page_desc} />
-      <meta name="twitter:url" content={config.siteUrl+'/'+page_name.toLowerCase()} />
+      <meta name="twitter:url" content={config.siteUrl + '/' + page_name.toLowerCase()} />
     </Helmet>
     <Wrapper css={PageTemplate}>
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
@@ -60,11 +61,14 @@ const About: React.FC = () => (
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>
-                  A Personal Portfolio and Blogging Website
-                </h5>
+                <h5>A Personal Portfolio and Blogging Website</h5>
                 <p>
-                Hey! I'm Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and Physics. I love to explore how and why things work the way they do. This website was created to help me do exactly that. By penning down my thoughts, experiences, and point of view on various technical and non-technical areas, I wish to understand things better, explain them clearly, and ultimately be a better problem solver.
+                  Hey! I'm Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and
+                  Physics. I love to explore how and why things work the way they do. This website
+                  was created to help me do exactly that. By penning down my thoughts, experiences,
+                  and point of view on various technical and non-technical areas, I wish to
+                  understand things better, explain them clearly, and ultimately be a better problem
+                  solver.
                 </p>
                 <p>Enjoy my blogs!</p>
               </div>

@@ -93,17 +93,17 @@ export default function ContactForm() {
         </select>
       </div>
       <div>
-      <label for="contact-message">Message</label>
-      <textarea
-        required
-        placeholder="Enter Message"
-        name="message"
-        id="contact-message"
-        css={messageCss}
-        onChange={handleChange}
-      ></textarea>
+        <label for="contact-message">Message</label>
+        <textarea
+          required
+          placeholder="Enter Message"
+          name="message"
+          id="contact-message"
+          css={messageCss}
+          onChange={handleChange}
+        ></textarea>
       </div>
-      <SubscribeFormButton type="submit" className="subButton" css={{margin:"0"}}>
+      <SubscribeFormButton type="submit" className="subButton" css={{ margin: '0' }}>
         <span>Send</span>
       </SubscribeFormButton>
     </form>
@@ -118,7 +118,7 @@ const inputCss = css`
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
   font-size: 1.7rem;
-  line-height: 1em;
+  line-height: 1.2em;
   font-weight: normal;
   user-select: text;
   border-radius: 5px;
@@ -181,7 +181,7 @@ const reasonCss = css`
 const messageCss = css`
   display: block;
   padding: 10px;
-  height:100px;
+  height: 125px;
   width: 100%;
   /* border: color(var(--lightgrey) l(+7%)) 1px solid; */
   border: ${lighten('0.07', colors.lightgrey)} 1px solid;

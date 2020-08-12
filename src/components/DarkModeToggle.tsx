@@ -23,11 +23,9 @@ const MoonIconWrapper = styled.div`
       margin-left: 0.2rem;
     }
   }
-
 `;
 
 const DarkModeToggle = () => {
-
   return (
     <ThemeContext.Consumer>
       {theme => (

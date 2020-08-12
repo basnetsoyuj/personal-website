@@ -1,10 +1,8 @@
 import { Link } from 'gatsby';
-import { setLightness } from 'polished';
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import { colors } from '../styles/colors';
 import { outer, inner } from '../styles/shared';
 import config from '../website-config';
 
@@ -13,9 +11,7 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]} className="mainSiteFooter">
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-        {config.footer && (
-              <>{config.footer}</>
-          )} &copy; {new Date().getFullYear()}{' '}
+          {config.footer && <>{config.footer}</>} &copy; {new Date().getFullYear()}{' '}
         </section>
         <SiteFooterNav>
           <Link to="/blog">Latest Posts</Link>
@@ -92,4 +88,3 @@ const SiteFooterNav = styled.nav`
     }
   }
 `;
-
