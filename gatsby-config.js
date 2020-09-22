@@ -11,8 +11,8 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 const path = require('path');
 
 function filterHTML(str, url) {
-  let noIframe = str.replace(/<iframe.*?<\/iframe>/g, '');
-  return noIframe.replace(/src="(\/.*?)"/g, `src="${url}$1"`);
+  let noIframe = str.replace(/<iframe.*?<\/iframe>/g, '').replace(/src="(\/.*?)"/g, `src="${url}$1"`);
+  return noIframe.replace(/<span class="gatsby-resp-image-background-image".*?><\/span>\s/g, '');
 }
 
 module.exports = {
