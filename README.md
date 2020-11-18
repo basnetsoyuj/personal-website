@@ -9,3 +9,5 @@ Soyuj Jung Basnet's personal website is powered by Gatsby, React, Node.js, GitHu
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+>**Note**: This website source code repository was created for my personal use, so it cannot be used as a theme or a template . Due to this, you might find numerous unconventional & quirky ways of doing things. There are also tons of personal elements that might only apply to me. That being said, feel free to take whatever inspiration or change it in any way that you want.

@@ -19,8 +19,8 @@ module.exports = {
   siteMetadata: {
     title: 'Soyuj Jung Basnet',
     description:
-      'A personal portfolio and blogging website of Soyuj Jung Basnet. Thoughts, musings, experiences, tutorials, snippets, articles, and everything else.',
-    siteUrl: 'https://soyuj.com.np', // full path to blog - no ending slash
+      'Personal portfolio and blogging website of Soyuj Jung Basnet. A collection of my thoughts, musings, experiences, tutorials, snippets, articles, and everything else.',
+    siteUrl: 'https://soyuj.com.np',
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
