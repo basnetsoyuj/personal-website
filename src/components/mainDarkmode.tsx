@@ -1,8 +1,14 @@
-import { colors } from '../styles/colors';
+import { colors } from '../styles/mainColors';
 import { css } from '@emotion/core';
 import { lighten } from 'polished';
 
 export const darkTheme = css`
+  * {
+    ::selection {
+      text-shadow: none;
+      background: ${lighten('0.3', colors.darkgrey)} !important;
+    }
+  }
   .site-nav-logo {
     color: #fff;
   }
@@ -104,7 +110,7 @@ export const darkTheme = css`
   .form-group {
     input[type='email'] {
       /* border-color: color(var(--darkmode) l(+6%)); */
-      border-color: ${lighten('0.06', colors.darkmode)};
+      border-color: ${lighten('0.15', colors.darkmode)};
       color: rgba(255, 255, 255, 0.9);
       /* background: color(var(--darkmode) l(+3%)); */
       background: ${lighten('0.03', colors.darkmode)};
@@ -115,6 +121,8 @@ export const darkTheme = css`
       }
     }
   }
+
+  
   .subButton {
     opacity: 0.9;
   }
@@ -168,7 +176,7 @@ export const darkTheme = css`
 
     hr {
       /* border-top-color: color(var(--darkmode) l(+8%)); */
-      border-top-color: ${lighten('0.08', colors.darkmode)};
+      border-top-color: ${lighten('0.08', colors.pseudoDarkmode)};
     }
 
     figcaption {
@@ -268,7 +276,7 @@ export const darkTheme = css`
     }
   }
   .site-title{
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .author-card {
@@ -307,9 +315,10 @@ export const darkTheme = css`
   }
 
   // for explore page
-  .search-input {
+  .search-input,
+  #contact-message {
     /* border-color: color(var(--darkmode) l(+6%)); */
-    border-color: ${lighten('0.06', colors.darkmode)};
+    border-color: ${lighten('0.15', colors.darkmode)};
     color: rgba(255, 255, 255, 0.9);
     /* background: color(var(--darkmode) l(+3%)); */
     background: ${lighten('0.03', colors.darkmode)};
@@ -317,6 +326,12 @@ export const darkTheme = css`
     :focus {
       /* border-color: color(var(--darkmode) l(+25%)); */
       border-color: ${lighten('0.25', colors.darkmode)};
+    }
+  }
+
+  .contactSocialLink {
+    svg {
+      fill: rgba(255, 255, 255, 0.9);
     }
   }
 `;

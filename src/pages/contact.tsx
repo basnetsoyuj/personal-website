@@ -12,7 +12,7 @@ import { LinkedIn } from '../components/icons/linkedin';
 import { Instagram } from '../components/icons/instagram';
 import { Mail } from '../components/icons/mail';
 
-import IndexLayout from '../layouts';
+import MainIndexLayout from '../layouts/mainIndex';
 import config from '../website-config';
 import {
   inner,
@@ -38,7 +38,7 @@ const page_name = 'Contact';
 const page_desc =
   'Please feel free to leave any questions, feedback or  report typos, grammatical errors, or any other types of inaccuracies in the blog.Your help will prove invaluable to make this blog more reliable and accurate.';
 const Contact: React.FC = () => (
-  <IndexLayout>
+  <MainIndexLayout>
     <Helmet>
       <title>{`${page_name} | ${config.title}`}</title>
       <meta name="description" content={page_desc} />
@@ -112,7 +112,7 @@ const Contact: React.FC = () => (
       </main>
       <Footer />
     </Wrapper>
-  </IndexLayout>
+  </MainIndexLayout>
 );
 
 const ContactSocialLink = css`

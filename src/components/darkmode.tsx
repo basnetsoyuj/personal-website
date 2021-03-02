@@ -3,6 +3,13 @@ import { css } from '@emotion/core';
 import { lighten } from 'polished';
 
 export const darkTheme = css`
+  * {
+    ::selection {
+      text-shadow: none;
+      background: ${lighten('0.3', colors.darkgrey)} !important;
+    }
+  }
+
   /* layouts/index.tsx */
   color: rgba(255, 255, 255, 0.75);
   background: ${colors.darkmode} !important;
@@ -318,7 +325,10 @@ export const darkTheme = css`
 
   .contactSocialLink {
     svg {
-      fill: #fff;
+      fill: color: rgba(255, 255, 255, 0.9);
     }
+  }
+  .site-title {
+    color: rgba(255, 255, 255, 0.9);
   }
 `;

@@ -7,17 +7,22 @@ import { Footer } from '../components/mainFooter';
 import SiteNav from '../components/main_header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+
+import MainIndexLayout from '../layouts/mainIndex';
+
 import config from '../website-config';
 import {
   inner,
   outer,
   SiteArchiveHeader,
   SiteHeader,
+  SiteHeaderContent,
   SiteMain,
   SiteNavMain,
+  SiteTitle
 } from '../styles/mainShared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+
 
 const PageTemplate = css`
   .site-main {
@@ -30,7 +35,7 @@ const page_name = 'About';
 const page_desc =
   "Hey! I am Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and Physics. I want to explore how and why things work the way they do. This website was created to help me do exactly that. By penning down my thoughts, experiences, and point of view on various technical and non-technical areas, I wish to understand things better, explain them clearly, and ultimately be a better problem solver.";
 const About: React.FC = () => (
-  <IndexLayout>
+  <MainIndexLayout>
     <Helmet>
       <title>{`${page_name} | ${config.title}`}</title>
       <meta name="description" content={page_desc} />
@@ -58,12 +63,15 @@ const About: React.FC = () => (
             <PostFullHeader className="post-full-header">
               <PostFullTitle className="post-full-title">About</PostFullTitle>
             </PostFullHeader>
-
+            <SiteHeaderContent className="site-header-content">
+              <SiteTitle className="site-title">
+                Hi, I'm Soyuj.
+              </SiteTitle>
+            </SiteHeaderContent>
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>A Personal Portfolio and Blogging Website</h5>
                 <p>
-                  Hey! I'm Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and
+                  I'm fascinated by Mathematics, Computer Science, and
                   Physics. I love to explore how and why things work the way they do. This website
                   was created to help me do exactly that. By penning down my thoughts, experiences,
                   and point of view on various technical and non-technical areas, I wish to
@@ -78,7 +86,7 @@ const About: React.FC = () => (
       </main>
       <Footer />
     </Wrapper>
-  </IndexLayout>
+  </MainIndexLayout>
 );
 
 export default About;

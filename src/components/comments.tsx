@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import React from 'react';
-import {css} from '@emotion/core';
+import { css } from '@emotion/core';
 
-const Comment = ({ commentBox,theme}) => {
+const Comment = ({ commentBox, theme }) => {
   useEffect(() => {
     const scriptEl = document.createElement('script');
     scriptEl.async = true;
@@ -11,7 +11,7 @@ const Comment = ({ commentBox,theme}) => {
     scriptEl.setAttribute('issue-term', 'title');
     scriptEl.setAttribute('label', 'comment :pencil:');
     scriptEl.setAttribute('id', 'utterances');
-    scriptEl.setAttribute('theme', `github-${ theme?'dark':'light'}`);
+    scriptEl.setAttribute('theme', `github-${theme ? 'dark' : 'light'}`);
     scriptEl.setAttribute('crossorigin', 'anonymous');
     if (commentBox && commentBox.current) {
       commentBox.current.appendChild(scriptEl);
@@ -19,8 +19,14 @@ const Comment = ({ commentBox,theme}) => {
       console.log(`Error adding utterances comments on: ${commentBox}`);
     }
   }, []);
-  
-return <><hr className="h_rule"/><h4 css={h4style}>COMMENTS</h4><div ref={commentBox} className="comments"></div></>;
+
+  return (
+    <>
+      <hr className="h_rule" />
+      <h4 css={h4style}>COMMENTS</h4>
+      <div ref={commentBox} className="comments"></div>
+    </>
+  );
 };
 
 const h4style = css`

@@ -32,7 +32,7 @@ export const SiteMain = css`
 `;
 
 export const SiteTitle = styled.h1`
-  font-family: minerva-modern;
+  font-family: minerva-modern !important;
   font-weight: 400;
   text-align: center;
   font-style: normal;

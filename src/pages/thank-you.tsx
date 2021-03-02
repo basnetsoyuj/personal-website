@@ -61,7 +61,7 @@ const ThankYouPage: React.FC = () => {
         </div>
         <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background">
           <div css={inner}>
-            <SiteHeaderContent className="site-header-conent">
+            <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">Thank you!</SiteTitle>
               <SiteDescription className="site-description" css={{ textAlign: 'center' }}>
                 I will get back to you as soon as possible.

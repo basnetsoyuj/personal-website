@@ -106,7 +106,7 @@ const BlogPage: React.FC<IndexProps> = props => {
         >
           <div css={inner}>
             <SiteNav isBlog />
-            <SiteHeaderContent className="site-header-conent">
+            <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img

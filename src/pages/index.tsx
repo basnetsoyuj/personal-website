@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -79,7 +79,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background">
           <div css={inner}>
-            <SiteHeaderContent className="site-header-conent">
+            <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
                 Just another human training artificial neural networks.
               </SiteTitle>
