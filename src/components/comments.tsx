@@ -9,7 +9,7 @@ const Comment = ({ commentBox, theme }) => {
     scriptEl.src = 'https://utteranc.es/client.js';
     scriptEl.setAttribute('repo', 'basnetsoyuj/personal-website');
     scriptEl.setAttribute('issue-term', 'title');
-    scriptEl.setAttribute('label', 'comment');
+    scriptEl.setAttribute('label', 'comment 💬');
     scriptEl.setAttribute('id', 'utterances');
     scriptEl.setAttribute('theme', `github-${theme ? 'dark' : 'light'}`);
     scriptEl.setAttribute('crossorigin', 'anonymous');
