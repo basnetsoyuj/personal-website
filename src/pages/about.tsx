@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
 import { css } from '@emotion/core';
 
 import { Footer } from '../components/mainFooter';
@@ -19,10 +18,10 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteNavMain,
-  SiteTitle
+  SiteTitle,
+  PostFullImage,
 } from '../styles/mainShared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
-
 
 const PageTemplate = css`
   .site-main {
@@ -34,6 +33,7 @@ const PageTemplate = css`
 const page_name = 'About';
 const page_desc =
   "Hey! I am Soyuj Jung Basnet. I'm fascinated by Mathematics, Computer Science, and Physics. I want to explore how and why things work the way they do. This website was created to help me do exactly that. By penning down my thoughts, experiences, and point of view on various technical and non-technical areas, I wish to understand things better, explain them clearly, and ultimately be a better problem solver.";
+
 const About: React.FC = () => (
   <MainIndexLayout>
     <Helmet>
@@ -63,20 +63,36 @@ const About: React.FC = () => (
             <PostFullHeader className="post-full-header">
               <PostFullTitle className="post-full-title">About</PostFullTitle>
             </PostFullHeader>
-            <SiteHeaderContent className="site-header-content">
-              <SiteTitle className="site-title">
+            <PostFullHeader className="post-full-header" css={{ paddingTop: '50px' }}>
+              <SiteTitle className="site-title" css={{ textAlign: 'center' }}>
                 Hi, I'm Soyuj.
               </SiteTitle>
-            </SiteHeaderContent>
+            </PostFullHeader>
+            <PostFullImage>
+              <img
+                src={require('../content/img/sjb.jpg')}
+                alt="Soyuj Jung Basnet"
+                style={{ opacity: '1', borderRadius: 4 }}
+              />
+            </PostFullImage>
+
+            <PostFullHeader className="post-full-header" css={{ paddingTop: '50px' }}>
+              <SiteTitle className="site-title" css={{ textAlign: 'center' }}>
+                I'm an Impassioned Deep Learning &amp; Machine Learning Practitioner from Nepal.
+              </SiteTitle>
+            </PostFullHeader>
+
             <PostFullContent className="post-full-content">
               <div className="post-content">
                 <p>
-                  I'm fascinated by Mathematics, Computer Science, and
-                  Physics. I love to explore how and why things work the way they do. This website
-                  was created to help me do exactly that. By penning down my thoughts, experiences,
-                  and point of view on various technical and non-technical areas, I wish to
-                  understand things better, explain them clearly, and ultimately be a better problem
-                  solver.
+                  I have always been fascinated by Mathematics, Computer Science, and Physics. I
+                  love to explore how and why things work the way they do.
+                </p>
+                <p>
+                  This website was created to help me do exactly that. By penning down my thoughts,
+                  experiences, and point of view on various technical and non-technical areas, I
+                  intend to understand things better, explain them clearly, and ultimately become a
+                  better problem solver.
                 </p>
                 <p>Enjoy my blogs!</p>
               </div>

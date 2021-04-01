@@ -40,7 +40,7 @@ interface TagTemplateProps {
         node: {
           id: string;
           description: string;
-          url?: String[];
+          url?: string[];
           image?: {
             childImageSharp: {
               fluid: FluidObject;

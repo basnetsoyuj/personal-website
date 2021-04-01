@@ -46,7 +46,7 @@ export default function ContactForm() {
       <input type="hidden" name="form-name" value="contact" />
       <div css={nameEmail}>
         <div css={name}>
-          <label for="contact-name">Name</label>
+          <label htmlFor="contact-name">Name</label>
           <input
             required
             placeholder="Enter your name"
@@ -60,7 +60,7 @@ export default function ContactForm() {
           />
         </div>
         <div css={email}>
-          <label for="contact-email">E-mail</label>
+          <label htmlFor="contact-email">E-mail</label>
           <input
             required
             placeholder="Enter Email Address"
@@ -74,7 +74,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div css={reasonCss}>
-        <label for="contact-reason">Subject</label>
+        <label htmlFor="contact-reason">Subject</label>
         <select
           required
           name="reason"
@@ -93,7 +93,7 @@ export default function ContactForm() {
         </select>
       </div>
       <div>
-        <label for="contact-message">Message</label>
+        <label htmlFor="contact-message">Message</label>
         <textarea
           required
           placeholder="Enter Message"

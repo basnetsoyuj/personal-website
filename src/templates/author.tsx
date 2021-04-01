@@ -127,7 +127,7 @@ const Author: React.FC<AuthorTemplateProps> = props => {
         <header className="site-archive-header" css={[SiteHeader, SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
-              <SiteNav isHome={false} />
+              <SiteNav />
             </div>
           </div>
 

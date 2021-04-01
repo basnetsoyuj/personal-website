@@ -12,6 +12,6 @@ export const colors = {
   brown: '#a3821a',
   lightblack: '#333333',
   // darkmode: color(var(--darkgrey) l(+2%)),
-  darkmode: '#000',
+  darkmode: '#000', //'#111111',
   pseudoDarkmode: '#191b1f',
 };

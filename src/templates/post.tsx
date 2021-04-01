@@ -63,7 +63,7 @@ interface PageTemplateProps {
         title: string;
         date: string;
         userDate: string;
-        img_credit: String[];
+        img_credit: string[];
         image: {
           childImageSharp: {
             fluid: any;
@@ -277,7 +277,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
               </ThemeContext.Consumer>
 
               {/* The big email subscribe modal content */}
-              {config.showSubscribe && <Subscribe title={config.blogTitle} />}
+              {config.showSubscribe && <Subscribe title={config.blogTitle!} />}
             </article>
           </div>
         </main>

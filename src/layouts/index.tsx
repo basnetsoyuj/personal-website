@@ -7,7 +7,7 @@ import ThemeContext from '../context/ThemeContext';
 // @ts-ignore
 import favicon from '../../src/favicon.ico';
 import { colors } from '../styles/colors';
-import {darkTheme} from '../components/darkmode';
+import { darkTheme } from '../components/darkmode';
 
 interface IndexProps {
   className?: string;
@@ -281,8 +281,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
                 }
                 body {
                   @media (max-width: 1170px) {
-                  overflow-x: hidden !important;
-                }
+                    overflow-x: hidden !important;
+                  }
                   color: ${lighten('-0.3', colors.midgrey)};
                   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
                     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

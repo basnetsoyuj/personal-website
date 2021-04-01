@@ -45,8 +45,9 @@ export const SiteTitle = styled.h1`
   white-space: pre-wrap;
 
   font-size: 2.91666667vw;
-  @media (max-width: 1000px) {
-    font-size: 3rem;
+
+  @media (max-width: 1400px) {
+    font-size: 4rem;
   }
 `;
 
@@ -350,5 +351,38 @@ export const NoImage = css`
     .no-image .author-social-link a {
       color: rgba(255, 255, 255, 0.75);
     }
+  }
+`;
+
+export const PostFullImage = styled.figure`
+  position: relative;
+  margin: 25px 0 25x;
+  background: ${colors.lightgrey} center center;
+  background-size: cover;
+  border-radius: 5px;
+
+  @media (max-width: 1170px) {
+    margin: 25px -6vw 25px;
+    border-radius: 0;
+    max-width: 1170px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 4vw;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    display: inline-block;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgb(14, 30, 37);
+    color: rgb(255, 255, 255);
+    padding: 2px 6px;
+    font-weight: 400;
+    letter-spacing: 0.03rem;
   }
 `;
