@@ -64,9 +64,7 @@ const Contact: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title" css={specialHeader}>
-                Get in touch with me
-              </PostFullTitle>
+              <PostFullTitle className="post-full-title">Get in touch with me</PostFullTitle>
               <SiteDescription>
                 <div className="contactSocialLink" css={ContactSocialLink}>
                   <a href={config.facebook} target="_blank" className="facebook-svg">
@@ -87,9 +85,9 @@ const Contact: React.FC = () => (
                 </div>
               </SiteDescription>
               <SiteDescription>
-                I would love to hear from you. Don’t be a stranger, just say hello! Feel free to
-                drop any feedback, suggestions, or questions. I am always open to discussing new
-                projects, creative ideas, and opportunities.
+                <p>Don’t be a stranger, just say hello! I would love to hear from you.</p>
+                <p>Feel free to drop any feedback, suggestions, or questions. I am always open to
+                discussing new projects, creative ideas, and opportunities.</p>
               </SiteDescription>
               <SiteDescription>
                 If you want to report bugs, typos, grammatical errors, or any other types of
@@ -140,14 +138,4 @@ const ContactSocialLink = css`
   }
 `;
 
-const specialHeader = css`
-  font-family: minerva-modern;
-  @media (max-width: 605px) {
-    font-size: 4.5rem;
-  }
-  @media (max-width: 440px) {
-    font-size: 3.75rem;
-    text-align: center;
-  }
-`;
 export default Contact;
