@@ -77,7 +77,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav />
           </div>
         </div>
-        <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background">
+        <div css={[outer, SiteHeader, SiteHeaderStyles]} className="site-header-background" style="margin-top:6em;">
           <div css={inner}>
             <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
