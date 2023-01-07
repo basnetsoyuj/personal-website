@@ -81,7 +81,10 @@ const IndexPage: React.FC<IndexProps> = props => {
           <div css={inner}>
             <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
-                Just another human training artificial neural networks.
+	 	I'm a computer science student working on machine learning. I like
+              math, board games, and deep neural networks. <br />
+              <br />
+              This is my digital space on the web. 🕸️	
               </SiteTitle>
             </SiteHeaderContent>
           </div>
