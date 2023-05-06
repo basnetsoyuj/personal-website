@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "https://soyuj.com.np/*"
+  to = "https://soyuj.com/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.soyuj.com.np/*"
+  to = "https://www.soyuj.com/:splat"
+  status = 301
+  force = true
